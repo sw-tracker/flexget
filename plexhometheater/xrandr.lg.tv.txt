@@ -1,0 +1,74 @@
+<screen id="0" minimum_w="320" minimum_h="200" current_w="1920" current_h="1080" maximum_w="32767" maximum_h="32767">
+  <output name="LVDS1" connected="true">
+    <mode id="0x4c" name="1366x768" w="1366" h="768" hz="59.99342" current="false" preferred="true"/>
+    <mode id="0xa8" name="1366x768" w="1366" h="768" hz="39.99602" current="false" preferred="false"/>
+    <mode id="0xa9" name="1360x768" w="1360" h="768" hz="59.79899" current="false" preferred="false"/>
+    <mode id="0xaa" name="1360x768" w="1360" h="768" hz="59.96003" current="false" preferred="false"/>
+    <mode id="0xab" name="1024x768" w="1024" h="768" hz="84.99669" current="false" preferred="false"/>
+    <mode id="0xac" name="1024x768" w="1024" h="768" hz="75.02858" current="false" preferred="false"/>
+    <mode id="0xad" name="1024x768" w="1024" h="768" hz="70.06936" current="false" preferred="false"/>
+    <mode id="0xae" name="1024x768" w="1024" h="768" hz="60.00384" current="false" preferred="false"/>
+    <mode id="0xaf" name="1024x768i" w="1024" h="768" hz="43.47877" current="false" preferred="false"/>
+    <mode id="0xb0" name="832x624" w="832" h="624" hz="74.55127" current="false" preferred="false"/>
+    <mode id="0xb1" name="800x600" w="800" h="600" hz="85.13688" current="false" preferred="false"/>
+    <mode id="0xb2" name="800x600" w="800" h="600" hz="72.18757" current="false" preferred="false"/>
+    <mode id="0xb3" name="800x600" w="800" h="600" hz="75.00000" current="false" preferred="false"/>
+    <mode id="0xb4" name="800x600" w="800" h="600" hz="60.31654" current="false" preferred="false"/>
+    <mode id="0xb5" name="800x600" w="800" h="600" hz="56.25000" current="false" preferred="false"/>
+    <mode id="0xb6" name="640x480" w="640" h="480" hz="85.00831" current="false" preferred="false"/>
+    <mode id="0xb7" name="640x480" w="640" h="480" hz="72.80880" current="false" preferred="false"/>
+    <mode id="0xb8" name="640x480" w="640" h="480" hz="75.00000" current="false" preferred="false"/>
+    <mode id="0xb9" name="640x480" w="640" h="480" hz="59.94048" current="false" preferred="false"/>
+    <mode id="0xba" name="720x400" w="720" h="400" hz="85.03890" current="false" preferred="false"/>
+    <mode id="0xbb" name="640x400" w="640" h="400" hz="85.07995" current="false" preferred="false"/>
+    <mode id="0xbc" name="632x395" w="632" h="395" hz="108.00971" current="false" preferred="false"/>
+    <mode id="0xbd" name="640x350" w="640" h="350" hz="85.07995" current="false" preferred="false"/>
+    <mode id="0xbe" name="504x378" w="504" h="378" hz="80.96722" current="false" preferred="false"/>
+    <mode id="0xbf" name="248x155" w="248" h="155" hz="113.25708" current="false" preferred="false"/>
+    <mode id="0xc0" name="248x155" w="248" h="155" hz="82.19465" current="false" preferred="false"/>
+  </output>
+  <output name="VGA1" connected="false">
+  </output>
+  <output name="HDMI1" connected="true" w="1920" h="1080" x="0" y="0" wmm="160" hmm="90">
+    <mode id="0xca" name="1920x1080" w="1920" h="1080" hz="60.00000" current="true" preferred="true"/>
+    <mode id="0xcb" name="1920x1080" w="1920" h="1080" hz="50.00000" current="false" preferred="false"/>
+    <mode id="0xcc" name="1920x1080" w="1920" h="1080" hz="59.94020" current="false" preferred="false"/>
+    <mode id="0xcf" name="1920x1080" w="1920" h="1080" hz="30.00000" current="false" preferred="false"/>
+    <mode id="0xd0" name="1920x1080" w="1920" h="1080" hz="25.00000" current="false" preferred="false"/>
+    <mode id="0xd1" name="1920x1080" w="1920" h="1080" hz="24.00000" current="false" preferred="false"/>
+    <mode id="0xd3" name="1920x1080" w="1920" h="1080" hz="29.97010" current="false" preferred="false"/>
+    <mode id="0xd4" name="1920x1080" w="1920" h="1080" hz="23.97608" current="false" preferred="false"/>
+    <mode id="0xcd" name="1920x1080i" w="1920" h="1080" hz="30.00000" current="false" preferred="false"/>
+    <mode id="0xce" name="1920x1080i" w="1920" h="1080" hz="25.00000" current="false" preferred="false"/>
+    <mode id="0xd2" name="1920x1080i" w="1920" h="1080" hz="29.97010" current="false" preferred="false"/>
+    <mode id="0xd5" name="1280x1024" w="1280" h="1024" hz="60.01974" current="false" preferred="false"/>
+    <mode id="0xd6" name="1360x768" w="1360" h="768" hz="60.01516" current="false" preferred="false"/>
+    <mode id="0xd7" name="1152x864" w="1152" h="864" hz="75.00000" current="false" preferred="false"/>
+    <mode id="0xd8" name="1280x720" w="1280" h="720" hz="60.95819" current="false" preferred="false"/>
+    <mode id="0xd9" name="1280x720" w="1280" h="720" hz="60.00000" current="false" preferred="false"/>
+    <mode id="0xda" name="1280x720" w="1280" h="720" hz="50.00000" current="false" preferred="false"/>
+    <mode id="0xdb" name="1280x720" w="1280" h="720" hz="59.94020" current="false" preferred="false"/>
+    <mode id="0xdc" name="1440x576i" w="1440" h="576" hz="25.00000" current="false" preferred="false"/>
+    <mode id="0xae" name="1024x768" w="1024" h="768" hz="60.00384" current="false" preferred="false"/>
+    <mode id="0xb4" name="800x600" w="800" h="600" hz="60.31654" current="false" preferred="false"/>
+    <mode id="0xdd" name="720x576" w="720" h="576" hz="50.00000" current="false" preferred="false"/>
+    <mode id="0xde" name="720x480" w="720" h="480" hz="60.00000" current="false" preferred="false"/>
+    <mode id="0xdf" name="720x480" w="720" h="480" hz="59.94006" current="false" preferred="false"/>
+    <mode id="0xe0" name="640x480" w="640" h="480" hz="60.00000" current="false" preferred="false"/>
+    <mode id="0xb9" name="640x480" w="640" h="480" hz="59.94048" current="false" preferred="false"/>
+    <mode id="0xe1" name="720x400" w="720" h="400" hz="70.08166" current="false" preferred="false"/>
+  </output>
+  <output name="DP1" connected="false">
+  </output>
+  <output name="HDMI2" connected="false">
+  </output>
+  <output name="HDMI3" connected="false">
+  </output>
+  <output name="DP2" connected="false">
+  </output>
+  <output name="DP3" connected="false">
+  </output>
+  <output name="VIRTUAL1" connected="false">
+  </output>
+</screen>
+

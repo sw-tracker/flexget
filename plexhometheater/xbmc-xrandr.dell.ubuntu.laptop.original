@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$#" == 0 ]; then
+    cat /opt/plexhometheater/bin/xrandr.txt
+else
+    /opt/plexhometheater/bin/xbmc-xrandr_bac "$@"
+fi
