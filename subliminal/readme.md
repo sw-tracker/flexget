@@ -31,7 +31,7 @@ sudo ln -s ~/.config/subliminal.cache.dbm /home/deluge/.config/subliminal.cache.
 
 - Make sure your access rights are setup correctly. The deluge user should be able to execute the script successfully.
 ```
-sudo -u deluge /home/deluge/getsubs.sh -1 <filename> <filepath>
+sudo -H -u deluge /home/deluge/getsubs.sh -1 <filename> <filepath>
 ```
 
 ##Usage:
