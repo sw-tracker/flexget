@@ -37,6 +37,7 @@ sudo chown deluge:deluge /var/log/deluge*
 
 sudo chown -R deluge:deluge /media* (where your media is)
 sudo chmod -R u=rwx,g=rwx,o=rx /media/
+sudo usermod -a -G plex deluge (if using plex)
 ```
 
 ##Install the Deluge Daemon
