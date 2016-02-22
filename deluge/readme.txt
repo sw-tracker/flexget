@@ -1,17 +1,17 @@
-Deluge-web:
+#Deluge-web:
 http://localhost:8112/
 
-Start/Stop (manual):
+#Start/Stop (manual):
 sudo start deluged
 
-Start on boot:
+#Start on boot:
 /etc/init/deluged.conf
 /etc/init/deluge-web.conf
 
-Setup (backup in case page goes down):
+#Setup (backup in case page goes down):
 http://www.havetheknowhow.com/Install-the-software/Install-Deluge-Headless.html
 
-How to install Deluge (v1.3.x) headless on Ubuntu Server
+##How to install Deluge (v1.3.x) headless on Ubuntu Server
 
 Deluge is a great BitTorrent client that you can install on Ubuntu to allow you to share your favourite files with the rest of the BitTorrent community.
 
