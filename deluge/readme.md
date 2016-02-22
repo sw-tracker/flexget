@@ -2,11 +2,15 @@
 http://localhost:8112/
 
 #Start/Stop (manual):
+```
 sudo start deluged
+```
 
 #Start on boot:
+```
 /etc/init/deluged.conf
 /etc/init/deluge-web.conf
+```
 
 #Setup:
 Disclaimer: These are not my instructions, I copied them from the link below and made a backup of what I did. Thank you very much to the guys at havetheknowhow!
