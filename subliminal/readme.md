@@ -38,12 +38,12 @@ sudo chown deluge:deluge /var/lib/deluge/.subliminal/subliminal.cache.dbm
 
 - Make sure your access rights are setup correctly. The deluge user should be able to execute the script successfully.
 ```
-sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 <filename> <filepath>
+sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 "<filename>" "<filepath>"
 ```
 
 ##Usage:
 ```
-subliminal --cache-dir <cachefile> download -l <lang> <filepathandname>
+subliminal --cache-dir <cachefile> download -l <lang> "<filepathandname>"
 <lang>: en
 ```
 
