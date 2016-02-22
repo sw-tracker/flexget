@@ -1,7 +1,7 @@
 #Install FlexGet on Ubuntu Trusty Tahr 14.04LTS to add RSS functionality to Deluge
 
 Disclaimer: 
-Disclaimer: These are not my instructions, I copied them from the link below and made a backup of what I did. Thank you very much to the guys at havetheknowhow! http://www.havetheknowhow.com/Install-the-software/Install-FlexGet.html
+These are not my instructions, I copied them from the link below and made a backup of what I did. Thank you very much to the guys at havetheknowhow! http://www.havetheknowhow.com/Install-the-software/Install-FlexGet.html
 
 ##Install Python & pip
 
@@ -115,5 +115,55 @@ To start it again use start instead of stop in the above command.
 
 #Configure FlexGet
 
-Now we have FlexGet installed and configured to run on boot we need to configure it to suit our needs. See the Configure FlexGet guide.
-- See more at: http://www.havetheknowhow.com/Install-the-software/Install-FlexGet.html#sthash.Ha732biS.dpuf
+Now we have FlexGet installed and configured to run on boot we need to configure it to suit our needs.
+
+##Creating the FlexGet config file on Ubuntu
+
+The configuration file is where we'll store all the instructions for FlexGet. ie. What to download and from where. You can link the config file to a more accessible location.
+
+```
+sudo ln -s /home/MyScripts/config.yml /var/lib/deluge/.flexget/config.yml
+```
+
+Now type the following command to create/open the file:
+
+```
+sudo -u deluge vim /var/lib/deluge/.flexget/config.yml
+```
+
+Enter the configuration parameters as required. See the FlexGet website for configuration examples.
+
+##Running FlexGet as the "deluge" user
+
+```
+cd /
+sudo -H -u deluge flexget execute --no-cache
+```
+
+##Testing your FlexGet config file
+
+```
+sudo -H -u deluge flexget --test execute
+```
+
+##Displaying verbose output
+
+```
+sudo -H -u deluge flexget execute -v
+```
+
+##Checking configuration syntax
+
+```
+sudo -H -u deluge flexget check
+```
+
+##How to wipe the FlexGet database and start over
+
+FlexGet keeps a record of what files it has and has not downloaded in an SQL database. If you ever want to wipe everything and start over then issue the following command:
+
+```
+sudo -u deluge rm /var/lib/deluge/.flexget/db-config.sqlite
+```
+
+- See more at: http://www.havetheknowhow.com/Install-the-software/Configure-FlexGet.html#sthash.oMZHY1C8.dpuf
