@@ -9,4 +9,4 @@ All users must belong to the group:
 
 Plex linux user: plex
 
-Deluge linus user: deluge
+Deluge linux user: deluge
