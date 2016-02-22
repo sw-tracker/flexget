@@ -49,7 +49,7 @@ Now we've got the components installed we need to make everything run on start-u
 
 This will create a file called deluged.conf. Next, assuming you're using Putty, highlight the following commands, right-click on them and select Copy
 
-'''
+```
 # deluged - Deluge daemon
 #
 # The daemon component of Deluge BitTorrent client. Deluge UI clients
@@ -69,7 +69,7 @@ env gid=deluge
 env umask=000
 
 exec start-stop-daemon -S -c $uid:$gid -k $umask -x /usr/bin/deluged -- -d
-'''
+```
 
 Toggle back to the Putty Session and press the [Insert] key once and add a couple of blank lines by pressing the [Enter] key. Next right click and the lines we've just copied above will be pasted into the file.
 
