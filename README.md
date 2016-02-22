@@ -27,7 +27,7 @@ sudo chmod -R u=rwx,g=rwx,o=rx /media/
 
 Then get subtitles if necessary:
 ```
-sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . "<folder>"
+sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/
 ```
 
 ##TODO:
