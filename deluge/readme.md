@@ -21,72 +21,59 @@ At the time of writing Deluge version 1.3.11 is the most up to date release for 
 
 So, first off we need to create a new user called "deluge" and perform a couple more steps:
 
-sudo adduser --disabled-password --system --home /var/lib/deluge --gecos "SamRo Deluge server" --group deluge
+> sudo adduser --disabled-password --system --home /var/lib/deluge --gecos "SamRo Deluge server" --group deluge
 
-sudo touch /var/log/deluged.log
+> sudo touch /var/log/deluged.log
 
-sudo touch /var/log/deluge-web.log
+> sudo touch /var/log/deluge-web.log
 
-sudo chown deluge:deluge /var/log/deluge*
-Install the Deluge Daemon
+> sudo chown deluge:deluge /var/log/deluge*
+
+##Install the Deluge Daemon
 
 Next we'll install the Deluge daemon itself:
 
-sudo apt-get update
+> sudo apt-get update
 
-sudo apt-get install deluged
+> sudo apt-get install deluged
 
 Next we'll install the Web interface by typing:
 
-sudo apt-get install deluge-webui
-Run the Deluge Daemon on startup
+> sudo apt-get install deluge-webui
 
-Now we've got the components installed we need to make everything run on start-up.
+##Run the Deluge Daemon on startup
 
-A note about the storing of configuration files
+Now we've got the components installed we need to make everything run on start-up. So, let's create the first script we need by typing the following command:
 
-If you're following my advice about storing configuration files separately then please note that with upstart scripts there has to be a copy stored directly on the Operating System partition. So, instead of linking to it we have to make a copy of it. That's no big deal really since we'll not need to edit the script once it's created.
+> sudo vim /etc/init/deluged.conf
 
-So, let's create the first script we need by typing the following command:
+This will create a file called deluged.conf. Next, assuming you're using Putty, highlight the following commands, right-click on them and select Copy
 
-sudo vim /media/WD40EFRX/RAIDMain/MyScripts/deluged.conf
+> # deluged - Deluge daemon
+> #
+> # The daemon component of Deluge BitTorrent client. Deluge UI clients
+> # connect to this daemon via DelugeRPC protocol.
+>
+> description "Deluge daemon"
+> author "Deluge Team"
+>
+> start on filesystem and static-network-up
+> stop on runlevel [016]
+>
+> respawn
+> respawn limit 5 30
+>
+> env uid=deluge
+> env gid=deluge
+> env umask=000
 
-obviously substituting /media/WD40EFRX/RAIDMain/MyScripts with the location of your script files.
-
-This will create a file called deluged.conf
-
-Next, assuming you're using Putty, highlight the following commands, right-click on them and select Copy
-
-# deluged - Deluge daemon
-#
-# The daemon component of Deluge BitTorrent client. Deluge UI clients
-# connect to this daemon via DelugeRPC protocol.
-
-description "Deluge daemon"
-author "Deluge Team"
-
-start on filesystem and static-network-up
-stop on runlevel [016]
-
-respawn
-respawn limit 5 30
-
-env uid=deluge
-env gid=deluge
-env umask=000
-
-exec start-stop-daemon -S -c $uid:$gid -k $umask -x /usr/bin/deluged -- -d
+> exec start-stop-daemon -S -c $uid:$gid -k $umask -x /usr/bin/deluged -- -d
 
 Toggle back to the Putty Session and press the [Insert] key once and add a couple of blank lines by pressing the [Enter] key. Next right click and the lines we've just copied above will be pasted into the file.
 
 Now press the [Esc] key once and type :wq to save and quit out of the script. If you make a mistake editing the file then issue :q! instead of :wq to abort your changes.
 
-Now let's copy it to the location required as part of upstart:
-
-sudo cp  /media/WD40EFRX/RAIDMain/MyScripts/deluged.conf /etc/init/deluged.conf
-
-as above substitute /media/WD40EFRX/RAIDMain/MyScripts with the location of your script files.
-Create the Web start-up script
+##Create the Web start-up script
 
 Now we need to create the script to launch the web user interface:
 
