@@ -47,6 +47,9 @@ subliminal --cache-dir <cachefile> download -l <lang> <filepathandname>
 <lang>: en
 ```
 
+#Logs:
+Can be found in: /var/lib/deluge/.subliminal/
+
 ##Troubleshoot:
 - Flexget & subliminal dependencies collision
 http://discuss.flexget.com/t/solved-flexget-subliminal-dependencies-collision/501
