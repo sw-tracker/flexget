@@ -13,8 +13,10 @@ Deluge linux user: deluge
 
 #Manual addition
 Copy media to the correct location:
+```
 - /media/Movies/<movie name> (<date)>/<filename>
 - /media/TV Shows/<series name>/Season <number>/<series name> - S<season number>E<episode number> - <quality>.<file type>
+```
 
 Then correct permissions so deluge group has access:
 
