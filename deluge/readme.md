@@ -8,7 +8,8 @@ sudo start deluged
 /etc/init/deluged.conf
 /etc/init/deluge-web.conf
 
-#Setup (backup in case page goes down):
+#Setup:
+Disclaimer: These are not my instructions, I copied them from the link below and made a backup of what I did. Thank you very much to the guys at havetheknowhow!
 http://www.havetheknowhow.com/Install-the-software/Install-Deluge-Headless.html
 
 ##How to install Deluge (v1.3.x) headless on Ubuntu Server
