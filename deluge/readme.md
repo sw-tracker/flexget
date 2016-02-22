@@ -22,13 +22,13 @@ At the time of writing Deluge version 1.3.11 is the most up to date release for 
 So, first off we need to create a new user called "deluge" and perform a couple more steps:
 
 ```
-> sudo adduser --disabled-password --system --home /var/lib/deluge --gecos "SamRo Deluge server" --group deluge
+sudo adduser --disabled-password --system --home /var/lib/deluge --gecos "SamRo Deluge server" --group deluge
 
-> sudo touch /var/log/deluged.log
+sudo touch /var/log/deluged.log
 
-> sudo touch /var/log/deluge-web.log
+sudo touch /var/log/deluge-web.log
 
-> sudo chown deluge:deluge /var/log/deluge*
+sudo chown deluge:deluge /var/log/deluge*
 ```
 
 ##Install the Deluge Daemon
@@ -36,15 +36,15 @@ So, first off we need to create a new user called "deluge" and perform a couple 
 Next we'll install the Deluge daemon itself:
 
 ```
-> sudo apt-get update
+sudo apt-get update
 
-> sudo apt-get install deluged
+sudo apt-get install deluged
 ```
 
 Next we'll install the Web interface by typing:
 
 ```
-> sudo apt-get install deluge-webui
+sudo apt-get install deluge-webui
 ```
 
 ##Run the Deluge Daemon on startup
@@ -52,7 +52,7 @@ Next we'll install the Web interface by typing:
 Now we've got the components installed we need to make everything run on start-up. So, let's create the first script we need by typing the following command:
 
 ```
-> sudo vim /etc/init/deluged.conf
+sudo vim /etc/init/deluged.conf
 ```
 
 This will create a file called deluged.conf. Next, assuming you're using Putty, highlight the following commands, right-click on them and select Copy
@@ -87,14 +87,15 @@ Now press the [Esc] key once and type :wq to save and quit out of the script. If
 
 Now we need to create the script to launch the web user interface:
 
-sudo vim /media/WD40EFRX/RAIDMain/MyScripts/deluge-web.conf
-
-as above, substitute /media/WD40EFRX/RAIDMain/MyScripts with the location of your script files.
+```
+sudo vim /etc/init/deluge-web.conf
+```
 
 This will create a file called deluge-web.conf
 
 Next highlight the following commands, right-click on them and select Copy
 
+```
 # deluge-web - Deluge Web UI
 #
 # The Web UI component of Deluge BitTorrent client, connects to deluged and
@@ -114,40 +115,45 @@ env gid=deluge
 env umask=027
 
 exec start-stop-daemon -S -c $uid:$gid -k $umask -x /usr/bin/deluge-web
+```
 
 Toggle back to the Putty Session and press the [Insert] key once and add a couple of blank lines by pressing the [Enter] key. Next right click and the lines we've just copied above will be pasted into the file.
 
 Now press the [Esc] key once and type :wq to save and quit out of the script. If you make a mistake editing the file then issue :q! instead of :wq to abort your changes.
 
-Now let's copy it to the location required as part of upstart:
-
-sudo cp /media/WD40EFRX/RAIDMain/MyScripts/deluge-web.conf /etc/init/deluge-web.conf
-
 Cross your fingers and restart the server by typing the following command:
 
+```
 sudo reboot -h now
-Accessing Deluge via the web interface
+```
+
+##Accessing Deluge via the web interface
 
 You should now be able to access the Web front-end for Deluge by typing http://MyMediaserver:8112 into the address bar of your browser where MyMediaserver is the name you gave to your server when you installed Ubuntu. Alternatively the IP address of the server works just as well.
 
-You should now be presented with the Deluge login-screen. Enter deluge for the password and you should then see a screen similar to this (Note: The version on Trusty looks slightly different to this):
+You should now be presented with the Deluge login-screen. Enter deluge for the password and you should then see a screen.
 
-Deluge Web UI
-Opening the correct ports on your router
+##Opening the correct ports on your router
 
 In order to start downloading Torrents you need to open up some ports on your router. If you click on the Preferences icon (the screwdriver/spanner) on the Deluge web interface and select Network, the Incoming Ports (the From: and To: ports inclusively) are the ports you need to open on your router. You can obviously change these ports if so wish, but make sure they match your router settings. Make sure you also uncheck the Use Random Ports option if you're going to be opening a specific port range on your router.
-Starting and stopping the deluge daemon:
+
+###Starting and stopping the deluge daemon:
 
 If at any time you want to stop the deluge daemon then you can do so by issuing the following command:
 
+```
 sudo stop deluged
+```
 
 To start it again use start instead of stop in the above command.
-Starting and stopping the web daemon:
+
+###Starting and stopping the web daemon:
 
 If at any time you want to stop the web daemon then use the following command:
 
+```
 sudo stop deluge-web
+```
 
 To start it again use start instead of stop in the above command.
 - See more at: http://www.havetheknowhow.com/Install-the-software/Install-Deluge-Headless.html#sthash.cGXrjyqs.dpuf
