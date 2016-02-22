@@ -5,4 +5,4 @@ torrentpath=$3
 
 echo "Torrent Details: " $torrentpath $torrentname $torrentid  > /var/lib/deluge/.subliminal/subliminal.log
 cd $torrentpath
-subliminal download -l en -a /var/lib/deluge/.subliminal/subliminal.cache.dbm . >> /var/lib/deluge/.subliminal/subliminal.log
+subliminal --cache-dir /var/lib/deluge/.subliminal/subliminal.cache.dbm download -l en $torrentname >> /var/lib/deluge/.subliminal/subliminal.log
