@@ -21,6 +21,7 @@ At the time of writing Deluge version 1.3.11 is the most up to date release for 
 
 So, first off we need to create a new user called "deluge" and perform a couple more steps:
 
+```
 > sudo adduser --disabled-password --system --home /var/lib/deluge --gecos "SamRo Deluge server" --group deluge
 
 > sudo touch /var/log/deluged.log
@@ -28,24 +29,31 @@ So, first off we need to create a new user called "deluge" and perform a couple 
 > sudo touch /var/log/deluge-web.log
 
 > sudo chown deluge:deluge /var/log/deluge*
+```
 
 ##Install the Deluge Daemon
 
 Next we'll install the Deluge daemon itself:
 
+```
 > sudo apt-get update
 
 > sudo apt-get install deluged
+```
 
 Next we'll install the Web interface by typing:
 
+```
 > sudo apt-get install deluge-webui
+```
 
 ##Run the Deluge Daemon on startup
 
 Now we've got the components installed we need to make everything run on start-up. So, let's create the first script we need by typing the following command:
 
+```
 > sudo vim /etc/init/deluged.conf
+```
 
 This will create a file called deluged.conf. Next, assuming you're using Putty, highlight the following commands, right-click on them and select Copy
 
