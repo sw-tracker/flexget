@@ -36,7 +36,7 @@ sudo touch /var/log/deluge-web.log
 sudo chown deluge:deluge /var/log/deluge*
 
 sudo chown -R deluge:deluge /media* (where your media is)
-sudo chmod -R u=rwx,g=rwx,o=x /media/
+sudo chmod -R u=rwx,g=rwx,o=rx /media/
 ```
 
 ##Install the Deluge Daemon
