@@ -19,6 +19,7 @@ sudo -u deluge mkdir /var/lib/deluge/.subliminal
 
 - Make it executable:
 ```
+sudo chown deluge:deluge /var/lib/deluge/.subliminal/getsubs.sh
 sudo chmod u+x /var/lib/deluge/.subliminal/getsubs.sh
 ```
 
