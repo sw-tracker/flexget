@@ -1,9 +1,47 @@
-tasks:
-  TVSHOWS:
-    # Make sure there's at least 10GB free before adding more downloads
+##################################################################################
+#TEMPLATES
+templates:
+  global:
+    # Make sure there's at least 20GB free before adding more downloads
     free_space:
       path: /media/
-      space: 10000
+      space: 20000
+    content_filter:
+      require:
+        - "*.avi"
+        - "*.mkv"
+        - "*.mpg"
+        - "*.mp4"
+    regexp:
+      reject:
+        #- (s|d)ub(s|bed)?\b: {from: title}                    # Block any subbed/dubbed/etc videos
+        - \b(duo|tri|quadri|tetra|penta)logy\b: {from: title} # Block series, only accept one at a time
+        - \b3-?D\b: {from: title}                             # I don't have any 3D displays
+        - \btrailer\b: {from: title}                          # I've gotten a few trailers that matched as movies. VERY annoying
+        - \bR5\b: {from: title}                               # The following are poor quality types that somehow got through the quality
+        - \bWEBSCR\b: {from: title}                           # features usually due to the title including a keyword like "720p" as well
+        - \bscreener\b: {from: title}
+        - \bTS\b: {from: title}
+        - \bCam\b: {from: title}
+        - \bRAW\b: {from: title}
+        - \bSpeed.Cd\b: {from: title} #slow
+    domain_delay:
+      torrentz.eu: 15 seconds
+    magnets: no
+    retry_failed:
+      retry_time: 30 minutes
+      retry_time_multiplier: 2 # Amount retry time will be multiplied by after each successive failure
+      max_retries: 5
+    deluge:
+      main_file_only: yes
+      keep_subs: yes
+      path: /media/Downloading/
+
+##################################################################################
+#TASKS
+tasks:  
+  TVSHOWS:
+    priority: 1
     inputs:
       - rss: { url: 'https://torrentz.eu/feed?q=tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+Big+Bang+Theory+tv' }
@@ -40,30 +78,12 @@ tasks:
     exists_series:
       - /media/TV Shows/
       - /media/Downloading/
-    priority: 1
+    template:
+      - global
     content_size:
       min: 100 #MB
       max: 400 #MB
       strict: yes
-    content_filter:
-      require:
-        - "*.avi"
-        - "*.mkv"
-        - "*.mpg"
-        - "*.mp4"
-    regexp:
-      reject:
-        #- (s|d)ub(s|bed)?\b: {from: title}                    # Block any subbed/dubbed/etc videos
-        - \b(duo|tri|quadri|tetra|penta)logy\b: {from: title} # Block series, only accept one at a time
-        - \b3-?D\b: {from: title}                             # I don't have any 3D displays
-        - \btrailer\b: {from: title}                          # I've gotten a few trailers that matched as movies. VERY annoying
-        - \bR5\b: {from: title}                               # The following are poor quality types that somehow got through the quality
-        - \bWEBSCR\b: {from: title}                           # features usually due to the title including a keyword like "720p" as well
-        - \bscreener\b: {from: title}
-        - \bTS\b: {from: title}
-        - \bCam\b: {from: title}
-        - \bRAW\b: {from: title}
-        - \bSpeed.Cd\b: {from: title} #slow
     # Look up info on TheTVDB.com to fill in extra info
     thetvdb_lookup: yes
     # Add accepted entries to Deluge and make sure they end up in the correct folder with a nice name
@@ -71,15 +91,5 @@ tasks:
       # Rename the "content file" to something nice, deluge specific
       content_filename: >
         {{ series_name|replace('/', '_')|replace(':', ' -') }} - {% if series_id_type == 'ep' and thetvdb_lookup_season_offset|default(False) %}{{ "S%0.2dE%0.2d"|format((series_season + thetvdb_lookup_season_offset),series_episode) }}{% else %}{{ series_id }}{% endif %}{% if ep_name|default(False) %} - {{ ep_name|replace('/', '_')|replace(':', ' -') }}{% endif %} - {{ quality }}
-      label: tv
-    domain_delay:
-      torrentz.eu: 15 seconds
-    deluge:
-      main_file_only: yes
-      keep_subs: yes
-      path: /media/Downloading/
       movedone: "/media/TV Shows/{{series_name}}/Season {{series_season}}/"
-    retry_failed:
-      retry_time: 30 minutes
-      retry_time_multiplier: 2 # Amount retry time will be multiplied by after each successive failure
-      max_retries: 5
+      label: tv
