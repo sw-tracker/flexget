@@ -1,7 +1,7 @@
 # flexget
 My FlexGet Setup on Ubuntu
 
-#Users and Groups
+##Users and Groups
 
 Group: deluge
 
@@ -11,7 +11,7 @@ Plex linux user: plex
 
 Deluge linux user: deluge
 
-#Manual addition
+##Manual addition
 Copy media to the correct location:
 ```
 - /media/Movies/<movie name> (<date)>/<filename>
@@ -27,14 +27,13 @@ sudo chmod -R u=rwx,g=rwx,o=rx /media/
 
 Then get subtitles if necessary:
 ```
-sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/
+sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . "<folder>"
 ```
 
-#TODO:
+##TODO:
 
 This is a list of what I still need to do:
 
-- Fix bug with getsubs.sh, folders and files with spaces fail
 - Auto download movies on my IMDB.com watchlist.
 - Auto start plexhometheater on PC boot (not working at the moment).
 - Shutdown PC when the "shutdown" option is selected on PLEX.
