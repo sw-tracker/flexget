@@ -24,10 +24,10 @@ sudo chmod u+x /var/lib/deluge/.subliminal/getsubs.sh
 
 - Deluge -> Preferences -> Plugins -> Execute (checkbox ticked)
 - Deluge -> Preferences -> Execute -> Add ->
-
-  Event: 'Torrent Complete'
-
-  Command: /<path>/getsubs.sh
+```
+Event: 'Torrent Complete'
+Command: /var/lib/deluge/.subliminal/getsubs.sh
+```
 
 - By default the cache file is stored in your users config folder (~/.config/subliminal.cache.dbm). Since we need to run subliminal as the deluge user copy this file to a folder where deluge has access and then link the 2 files so they are in sync:
 ```
