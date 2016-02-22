@@ -1,5 +1,8 @@
 #Install FlexGet on Ubuntu Trusty Tahr 14.04LTS to add RSS functionality to Deluge
 
+Disclaimer: 
+Disclaimer: These are not my instructions, I copied them from the link below and made a backup of what I did. Thank you very much to the guys at havetheknowhow! http://www.havetheknowhow.com/Install-the-software/Install-FlexGet.html
+
 ##Install Python & pip
 
 First off we need to install Python and pip if they're not installed already. So type or paste the following two commands into a Putty session or directly into the command line of your Ubuntu installation:
