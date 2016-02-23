@@ -14,7 +14,7 @@ Give plex user access or it cant read the new episodes added by deluge:
 sudo usermod -a -G plex deluge
 ```
 
-##Start PHT on boot
+#Start PHT on boot
 
 /home/<me>/.config/autostart/plexhometheater.sh.desktop
 
