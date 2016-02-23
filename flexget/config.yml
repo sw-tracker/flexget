@@ -51,7 +51,7 @@ tasks:
       - rss: { url: 'https://torrentz.eu/feed?q=The+Originals+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+Vampire+Diaries+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+Walking+Dead+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=The+X+Files+Re+Opened+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=The+X+Files+S10+tv' }
     series:
       settings:
         TV:
@@ -74,7 +74,8 @@ tasks:
             begin: S07E10
         - The Walking Dead:
             begin: S06E09
-        - The X Files Re Opened
+        - The X Files:
+            begin: S10E01
     exists_series:
       - /media/TV Shows/
       - /media/Downloading/
