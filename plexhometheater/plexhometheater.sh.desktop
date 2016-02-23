@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=~/bin/plexhometheater.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Plex Home Theater
+Name=Plex Home Theater
+Comment[en_US]=
+Comment=
