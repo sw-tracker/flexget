@@ -11,4 +11,4 @@ cd "$torrentpath"
 #we could use torrentname instead of 'dot' but I personally prefer it this way because I use this script during manual download
 subliminal --cache-dir /var/lib/deluge/.subliminal/ download -l en . >> /var/lib/deluge/.subliminal/subliminal.log
 #fix permissions on new folder and files so plex can see them
-chmod -R u=rwx,g=rwx,o=rx "$torrentpath" >> /var/lib/deluge/.subliminal/subliminal.log
+chmod -R u=rwx,g=rwx,o=rx /media/ >> /var/lib/deluge/.subliminal/subliminal.log
