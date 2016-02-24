@@ -17,8 +17,10 @@ sudo usermod -a -G plex deluge
 #Start PHT on boot
 Copy this file to this location:
 ```
-/home/<me>/.config/autostart/plexhometheater.sh.desktop
+/home/olga/.config/autostart/plexhometheater.sh.desktop
 ```
+
+*Important:* Do not user '~' in the desktop file.
 
 #Troubleshoot
 
