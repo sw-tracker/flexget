@@ -30,6 +30,8 @@ Plex Home Theater -> Preferences -> Change Preferences for System -> Advanced ->
 
 #Dual Monitor on Ubuntu
 
+Disclaimer: I got this instructions from the link below. I copied them so I'd remember what I did. A big thanks to 'Bits and Pieces' for providing a solution to this issue: http://www.jedrivisser.com/2014/04/plex-dual-monitor-on-ubuntu.html
+
 I had a lot of problems with the Plex client on Ubuntu and my dual monitor setup.
 
 If you run plex in fullscreen mode it detects the screens incorrectly (because of TwinView and xrandr).
@@ -46,17 +48,17 @@ So here is how I got my Plex to work correctly on my two monitors.
 
 ##Part 1 - Full screen windowed mode:
 
-1. Set Plex to windowed mode:
+- Set Plex to windowed mode:
 ```
 Preferences > System > Advanced > Display Mode > Windowed
 ```
 
-2. Install wmctrl:
+- Install wmctrl:
 ```
 sudo apt-get install wmctrl
 ```
 
-3. copy the shell script for plex to your own bin folder and make some changes:
+- Copy the shell script for plex to your own bin folder and make some changes:
 ```
 mkdir ~/bin
 cp /usr/bin/plexhometheater.sh ~/bin/plexhometheater.sh
@@ -73,9 +75,9 @@ wmctrl -x -r plexhometheater.plexhometheater -b add,fullscreen
 ```
 
 Make sure this is executed when you launch plex instead of the original (see .desktop file).
-The first 2 line are the same as the original file,
-The 3rd line has an added '&' which allow the other lines to be executed
-The 4th line sleeps one second while plex launches
+The first 2 line are the same as the original file.
+The 3rd line has an added '&' which allow the other lines to be executed.
+The 4th line sleeps one second while plex launches.
 The 5th line puts plex on the correct screen (the second 0 is the x-coordinate of the plex window), so change that to something like 3000 if you want plex on your second monitor, ex.
 
 ```
@@ -83,34 +85,34 @@ wmctrl -x -r plexhometheater.plexhometheater -e 0,3000,-1,-1,-1
 ```
 
 The 6th line makes the window full screen.
-Hopefully this is all you need. If your Plex has the wrong resolution then follow part two
+Hopefully this is all you need. If your Plex has the wrong resolution then follow part two.
 
 ##Part 2 - Change windowed mode resolution:
 
 Plex sets the resolution using its own xrandr binary, so to force the resolution I lied to it.
 
-1. Turn off your second screen, keeping only the one you want plex to run on:
+- Turn off your second screen, keeping only the one you want plex to run on:
 
 In Ubuntu and not Plex go to Settings > System Settings... > Displays and turn off the display you to not want plex on, leaving only the want you want plex to be displayed on.
 
 This lets you get the correct xrandr output for the next step.
 
-2. Run Plex's xrandr and save the output:
+- Run Plex's xrandr and save the output:
 ```
 cd /opt/plexhometheater/bin
 sudo ./xbmc-xrandr > xrandr.txt
 ```
 
-3. Turn on your second screen again:
+- Turn on your second screen again:
 
 Settings > System Settings... > Displays and turn on your second display
 
-4. Move xrandr:
+- Move xrandr:
 ```
 sudo mv xbmc-xrandr xbmc-xrandr_bac
 ```
 
-5. Create your own xrandr that calls xrandr when it wants to, otherwise returns your txt file:
+- Create your own xrandr that calls xrandr when it wants to, otherwise returns your txt file:
 
 Use your favourite editor (in my case vim) to create your own xrandr file
 ```
@@ -128,7 +130,7 @@ else
 fi
 ```
 
-save the file and make it executable
+Save the file and make it executable
 ```
 sudo chmod +x xbmc-xrandr
 ```
