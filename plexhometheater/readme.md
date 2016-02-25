@@ -28,7 +28,7 @@ https://forums.plex.tv/discussion/comment/880452#Comment_880452
 
 - Create a backup of this file:
 ```
-cp /opt/plexhometheater/share/XBMC/addons/skin.plex/720p/LeftSideMenu.xml{,.bak}
+sudo cp /opt/plexhometheater/share/XBMC/addons/skin.plex/720p/LeftSideMenu.xml{,.bak}
 ```
 
 **Option 1**
