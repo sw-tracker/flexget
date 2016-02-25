@@ -22,6 +22,46 @@ Copy this file to this location:
 
 *Important:* Do not user '~' in the desktop file.
 
+#Shutdown PC
+**Untested, things to try**
+https://forums.plex.tv/discussion/comment/880452#Comment_880452
+
+- Create a backup of this file:
+```
+cp /opt/plexhometheater/share/XBMC/addons/skin.plex/720p/LeftSideMenu.xml{,.bak}
+```
+
+**Option 1**
+- Execute this to add the shutdown command to Plex:
+```
+sed -i 's|Plex.Powerdown|System.Exec("dbus-send,--system,--print-reply,--dest='org.freedesktop.login1',/org/freedesktop/login1,org.freedesktop.login1.Manager.PowerOff,boolean:true")|g' /opt/plexhometheater/share/XBMC/addons/skin.plex/720p/LeftSideMenu.xml
+```
+
+**Option 2**
+- Execute this to add the shutdown command to Plex:
+```
+sed -i 's/Plex.Powerdown/System.Exec("sudo,poweroff")/g' /opt/plexhometheater/share/XBMC/addons/skin.plex/720p/LeftSideMenu.xml
+```
+
+- We need to allow the 'plex' user to shutdown without entering a password.
+```
+sudo echo "plex ALL=(ALL)NOPASSWD: /sbin/poweroff" | sudo tee --append /etc/sudoers
+```
+
+- To view the sudoers file and verify modification type:
+```
+sudo visudo
+```
+The file should now contain (at the end of the file):
+```
+plex ALL=NOPASSWD: /sbin/poweroff
+```
+
+Out of curiority, what does this return?
+```
+plex=`ps -ef | grep gnome-session | grep -v grep | head -1 | cut -d ' ' -f1`
+```
+
 #Troubleshoot
 
 ##Screen Flickers
