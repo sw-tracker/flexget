@@ -30,6 +30,14 @@ Then get subtitles if necessary:
 sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/
 ```
 
+##Media File Structure:
+
+```
+- /media/Movies/<movie name> (<date)>/<filename>
+- /media/TV Shows/<series name>/Season <number>/<series name> - S<season number>E<episode number> - <quality>.<file type>
+- /media/Music/<ArtistName>/<TrackName>.<ext>
+```
+
 ##TODO:
 
 This is a list of what I still need to do:
