@@ -36,7 +36,7 @@ sudo cp /opt/plexhometheater/share/XBMC/addons/skin.plex/720p/LeftSideMenu.xml{,
 sudo sed -i 's|Plex.Powerdown|System.Exec("dbus-send,--system,--print-reply,--dest='org.freedesktop.login1',/org/freedesktop/login1,org.freedesktop.login1.Manager.PowerOff,boolean:true")|g' /opt/plexhometheater/share/XBMC/addons/skin.plex/720p/LeftSideMenu.xml
 ```
 
-This essentially replaces the xml code below in the original file with the System.Exec(...) command that triggers the shutdown.
+This essentially replaces the command in the xml code below in the original file, with the System.Exec(...) command that triggers the shutdown.
 ```
 <onclick>Plex.Suspend</onclick>
 ```
