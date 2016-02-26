@@ -38,11 +38,7 @@ templates:
       keep_subs: yes
       path: /media/Downloading/
 
-##################################################################################
-#TASKS
-tasks:  
-  TVSHOWS:
-    priority: 1
+  tv_shows:
     inputs:
       - rss: { url: 'https://torrentz.eu/feed?q=tv' }
     include: [ my_series.yml ]
@@ -64,6 +60,24 @@ tasks:
         {{ series_name|replace('/', '_')|replace(':', ' -') }} - {% if series_id_type == 'ep' and thetvdb_lookup_season_offset|default(False) %}{{ "S%0.2dE%0.2d"|format((series_season + thetvdb_lookup_season_offset),series_episode) }}{% else %}{{ series_id }}{% endif %}{% if ep_name|default(False) %} - {{ ep_name|replace('/', '_')|replace(':', ' -') }}{% endif %} - {{ quality }}
       movedone: "/media/TV Shows/{{series_name}}/Season {{series_season}}/"
       label: tv
+
+##################################################################################
+#TASKS
+tasks:  
+  tv_series:
+    priority: 1
+    template: tv_shows
+
+  #Run this task to make flexget learn which episodes you already have in the file system
+  seed_series_db:
+    # The filesystem plugin will find all of your existing episodes
+    filesystem:
+      regexp: .*(avi|mkv|mpg|mp4)$
+      path: /media/TV Shows/
+      recursive: yes
+    include: [ my_series.yml ]
+    # We use the manual plugin so that this task only runs when explicitly called
+    manual: yes
 
 ##################################################################################
 #SCHEDULES
