@@ -2,10 +2,10 @@
 #TEMPLATES
 templates:
   global:
-    # Make sure there's at least 20GB free before adding more downloads
+    # Make sure there's at least 30GB free before adding more downloads
     free_space:
       path: /media/
-      space: 20000
+      space: 30000
     content_filter:
       require:
         - "*.avi"
