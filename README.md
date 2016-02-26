@@ -32,13 +32,11 @@ I use this to download subtitles as soon as an episode or movie is downloaded. T
 
 ##Users and Groups
 
-Group: deluge
+All users must belong to the group: `deluge`
 
-All users must belong to the group:
+Plex linux user: `plex`
 
-Plex linux user: plex
-
-Deluge linux user: deluge
+Deluge linux user: `deluge`
 
 ##Manual addition
 Copy media to the correct location:
