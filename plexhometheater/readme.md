@@ -41,6 +41,18 @@ This essentially replaces the command in the xml code below in the original file
 <onclick>Plex.Suspend</onclick>
 ```
 
+- If using a skin then the LeftSideMenu.xml file is located in:
+```
+/home/olga/.plexht/addons/<skin name>
+
+i.e. skin.plex_black_editionHT
+```
+
+instead of
+```
+/opt/plexhometheater/share/XBMC/addons/skin.plex/
+```
+
 #Install Skins
 
 Download the desired skin and unzip to the path below. Then select the skin via PHT UI.
