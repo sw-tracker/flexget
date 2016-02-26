@@ -168,4 +168,11 @@ FlexGet keeps a record of what files it has and has not downloaded in an SQL dat
 sudo -u deluge rm /var/lib/deluge/.flexget/db-config.sqlite
 ```
 
+##Teach FlexGet which Episodes you Already Have
+
+Add a task called `seed_series_db` (see config.yml for details), and then call it manually (this task does not run automatically).
+```
+sudo -H -u deluge flexget execute --tasks seed_series_db --disable-advancement --learn
+```
+
 - See more at: http://www.havetheknowhow.com/Install-the-software/Configure-FlexGet.html#sthash.oMZHY1C8.dpuf
