@@ -41,6 +41,15 @@ This essentially replaces the command in the xml code below in the original file
 <onclick>Plex.Suspend</onclick>
 ```
 
+#Install Skins
+
+Download the desired skin and unzip to the path below. Then select the skin via PHT UI.
+```
+/home/olga/.plexht/addons/
+```
+
+I use the black edition skin from: https://forums.plex.tv/categories/plex-black-edition
+
 #Troubleshoot
 
 ##Screen Flickers
