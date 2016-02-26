@@ -3,7 +3,8 @@ series:
       begin: S09E01
   - The Big Bang Theory:
       begin: S09E14
-  - Fear The Walking Dead
+  - Fear The Walking Dead:
+      begin: S02E01
   - Homeland:
       begin: S04E01
   - Law and Order SVU:
@@ -19,4 +20,3 @@ series:
       begin: S06E09
   - The X Files:
       begin: S10E01
-
