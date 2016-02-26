@@ -24,7 +24,7 @@ This is my choice of torrent download software. I run it as a daemon on boot and
 
 ###FlexGet
 
-I use this software to auto-download TV series (using deluge). This means that if a new episode comes out, it will get downloaded and added to my media centre. It runs as a daemon on boot and can be configured to check the torrents site with the 'schedule' configuration.
+I use this software to auto-download TV series (using deluge). FlexGet finds the torrents I want and adds them to deluge for download. This means that if a new episode comes out, it will get downloaded and added to my media centre. It runs as a daemon on boot and can be configured to check the torrents site with the 'schedule' configuration.
 
 ###Subliminal
 
