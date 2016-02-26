@@ -1,14 +1,12 @@
 #My Media Centre Setup
 
-##Setup
-
-I setup the following software:
+##Overview
 
 ###PLEX Server
 
 With this I can:
 
-1. View and stream media using Chromecast to other TVs in the house.
+1. View and stream media using Chromecast and the PLEX mobile app to other TVs in the house.
 
 2. View and manage my media via the Plex Web UI.
 
