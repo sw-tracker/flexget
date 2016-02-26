@@ -122,7 +122,8 @@ Now we have FlexGet installed and configured to run on boot we need to configure
 The configuration file is where we'll store all the instructions for FlexGet. ie. What to download and from where. You can link the config file to a more accessible location.
 
 ```
-sudo ln -s /home/MyScripts/config.yml /var/lib/deluge/.flexget/config.yml
+sudo ln -s /home/olga/config.yml /var/lib/deluge/.flexget/config.yml
+sudo ln -s /home/olga/.flexget/my_series.yml /var/lib/deluge/.flexget/my_series.yml
 ```
 
 Now type the following command to create/open the file:
