@@ -24,7 +24,7 @@ Copy this file to this location:
 
 #Shutdown PC
 
-#Sskin.Plex (default skin)
+##Skin.Plex (default skin)
 
 Solution found on:
 https://forums.plex.tv/discussion/comment/880452#Comment_880452
