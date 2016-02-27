@@ -23,6 +23,9 @@ Copy this file to this location:
 *Important:* Do not user '~' in the desktop file.
 
 #Shutdown PC
+
+#Sskin.Plex (default skin)
+
 Solution found on:
 https://forums.plex.tv/discussion/comment/880452#Comment_880452
 
@@ -41,17 +44,19 @@ This essentially replaces the command in the xml code below in the original file
 <onclick>Plex.Suspend</onclick>
 ```
 
-- If using a skin then the LeftSideMenu.xml file is located in:
-```
-/home/olga/.plexht/addons/<skin name>
+##Skin.Plex_Black (skin.plex_black_editionHT)
 
-i.e. skin.plex_black_editionHT
+- If using a skin then *.xml files are located in:
+```
+/home/olga/.plexht/addons/skin.plex_black_editionHT/
 ```
 
 instead of
 ```
 /opt/plexhometheater/share/XBMC/addons/skin.plex/
 ```
+
+- Finding the right file is in progress...
 
 #Install Skins
 
