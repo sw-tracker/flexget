@@ -24,6 +24,8 @@ Copy this file to this location:
 
 #Shutdown PC
 
+This has to be done for each skin in which you would like to use the 'Shut Down' option:
+
 ##Skin.Plex (default skin)
 
 Solution found on:
