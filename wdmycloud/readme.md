@@ -57,15 +57,25 @@ Check that it was mount correctly
 showmount -e localhost
 ```
 
-Check user ID on server/pc and ssh/hard disk:
+- Check user ID on server/pc and ssh/hard disk:
 ```
 id -u ourmedia
 result: 1003 (ssh)
 ```
 
+- Create user on server/pc
+```
+sudo adduser -u 1003 --system --home /home/wdmycloud --gecos "My Cloud OurMedia" ourmedia
+sudo usermod -a -G deluge ourmedia
+```
 
+- Install NFS on the hard disk:
+```
+sudo apt-get update && sudo apt-get install portmap nfs-common
+```
 
 - Now we need to mount the hard disk on Ubuntu (`/home/wdmycloud/`):
 ```
-sudo mkdir wdmycloud
+sudo mkdir wdmycloud/ourmedia
+sudo mount -t nfs -o udp,vers=3,soft,intr,rsize=8192,wsize=8192 192.168.1.51:/wdmycloud/ourmedia /home/wdmycloud/ourmedia/
 ```
