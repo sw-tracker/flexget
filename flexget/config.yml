@@ -45,6 +45,7 @@ templates:
   tv_shows:
     include: [ my_series.yml ]
     exists_series:
+      - /media/cloud_media/TV Shows/
       - /media/local/TV Shows/
       - /media/local/Downloading/
     content_size:
@@ -78,7 +79,9 @@ tasks:
     # The filesystem plugin will find all of your existing episodes
     filesystem:
       regexp: .*(avi|mkv|mpg|mp4)$
-      path: /media/local/TV Shows/
+      path:
+        - /media/cloud_media/TV Shows/
+        - /media/local/TV Shows/
       recursive: yes
     include: [ my_series.yml ]
     # We use the manual plugin so that this task only runs when explicitly called
