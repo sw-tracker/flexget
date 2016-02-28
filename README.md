@@ -48,13 +48,13 @@ Copy media to the correct location:
 Then correct permissions so deluge group has access:
 
 ```
-sudo chown -R deluge:deluge /media*
-sudo chmod -R u=rwx,g=rwx,o=rx /media/
+sudo chown -R deluge:deluge /media/local/
+sudo chmod -R u=rwx,g=rwx,o=rx /media/local/
 ```
 
 Then get subtitles if necessary:
 ```
-sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/
+sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/local/
 ```
 
 ##Media File Structure:
