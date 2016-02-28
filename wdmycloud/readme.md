@@ -10,72 +10,49 @@ Then re-boot all devices: PC, router and hard-disk. The new IP address should be
 - We need to install the file server we will use:
 ```
 sudo apt-get install nfs-common nfs-kernel-server
+sudo apt-get install cifs-utils
 ```
 
-- Enable SSH on WD My Cloud: `My Cloud Dashboard -> Settings -> Network -> SSH`
+- I was able to mount the nas share from file explorer:
+
+1. Network -> Connect to Server -> Browse
+
+2. it looked like `smb://.../cloud_media/`
+
+3. Enter username and password
+
+- However, this is only temporary. To make it a proper mount first create the folder that will map to the share:
 ```
-ssh root@192.168.1.XX
-```
-```
-The authenticity of host 'nas (xxx.xxx.xxx.xxx)' can't be established.RSA key fingerprint is 12:34:56:78:90:AB:CD:EF:00:11:22:33:44:55:66:77.
-Are you sure you want to continue connecting (yes/no)?
-```
-Enter `yes`.
-```
-Warning: Permanently added 'nas,xxx.xxx.xxx.xxx' (RSA) to the list of known hosts.
-```
-Type your root password, or if you haven't ever changed it, type `welc0me`. If you are logged on using the default password CHANGE IT NOW by typing:
-```
-passwd
+sudo mkdir /media/cloud_media/
 ```
 
-- We now need to modify the file responsible for managing the exports on the server/pc. (Create a backup, make it read-only, 
+- Then add the mount:
 ```
-cd /etc/
-sudo cp exports exports.orig
-sudo chmod 400 exports.orig
-sudo vim exports
+sudo vim /etc/fstab
 ```
 
-Add the following line:
+Add the following at the end of the file:
 ```
-/wdmycloud/ourmedia *(rw,no_all_squash,sync,no_subtree_check,insecure,crossmnt,anonuid=65534,anongid=1000)
-```
-
-Then copy the file to the hard disk:
-```
-rcp exports root@192.168.1.XX:/etc/
+//192.168.1.XX/cloud_media  /media/cloud_media  cifs  username=<nas_username>,password=<nas_password>,iocharset=utf8,sec=ntlm  0  0
 ```
 
-Now we need to restart the NFS server to make the changes take effect:
+and run this command to mount:
 ```
-sudo /etc/init.d/nfs-kernel-server restart
-```
-
-Check that it was mount correctly
-```
-showmount -e localhost
+sudo mount -a
 ```
 
-- Check user ID on server/pc and ssh/hard disk:
+- This should have already worked. However, lets protect our credentials in a safer location. Create a file in `~/.credentials/.mycloudmedia` with:
 ```
-id -u ourmedia
-result: 1003 (ssh)
-```
-
-- Create user on server/pc
-```
-sudo adduser -u 1003 --system --home /home/wdmycloud --gecos "My Cloud OurMedia" ourmedia
-sudo usermod -a -G deluge ourmedia
+username=<nas_username>
+password=<nas_password>
 ```
 
-- Install NFS on the hard disk:
+Change the rights:
 ```
-sudo apt-get update && sudo apt-get install portmap nfs-common
+sudo chmod 600 ~/.credentials/.mycloudmedia
 ```
 
-- Now we need to mount the hard disk on Ubuntu (`/home/wdmycloud/`):
+Modify the line we added before to:
 ```
-sudo mkdir wdmycloud/ourmedia
-sudo mount -t nfs -o udp,vers=3,soft,intr,rsize=8192,wsize=8192 192.168.1.51:/wdmycloud/ourmedia /home/wdmycloud/ourmedia/
+//192.168.1.XX/cloud_media  /media/cloud_media  cifs credentials=/home/olga/.credentials/.mycloudmedia,iocharset=utf8,sec=ntlm  0  0
 ```
