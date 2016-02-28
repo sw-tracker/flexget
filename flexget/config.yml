@@ -90,6 +90,6 @@ tasks:
 ##################################################################################
 #SCHEDULES
 schedules:
-  - tasks: [ 'TVSHOWS' ]
+  - tasks: [ 'tv_series_auto' ]
     interval:
       hours: 2
