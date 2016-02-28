@@ -1,11 +1,13 @@
 ##################################################################################
 #TEMPLATES
 templates:
-  global:
+  my_global:
     # Make sure there's at least 30GB free before adding more downloads
     free_space:
-      path: /media/
+      path: /media/local/
       space: 30000
+    # torrentz.eu ssl certs always fail
+    verify_ssl_certificates: no
     quality: hdtv+
     content_filter:
       require:
@@ -29,12 +31,6 @@ templates:
     domain_delay:
       torrentz.eu: 15 seconds
     magnets: no
-    # Require at least X seeds of any torrent
-    torrent_alive:
-      min_seeds: 5
-      reject_for: 1 day
-    # torrentz.eu ssl certs always fail
-    verify_ssl_certificates: no
     retry_failed:
       retry_time: 30 minutes
       retry_time_multiplier: 2 # Amount retry time will be multiplied by after each successive failure
@@ -42,17 +38,15 @@ templates:
     deluge:
       main_file_only: yes
       keep_subs: yes
-      path: /media/Downloading/
+      path: /media/local/Downloading/
+      main_file_ratio: 0.80 #remove torrent file after uploaded 80%
+      removeatratio: yes
 
   tv_shows:
-    inputs:
-      - rss: { url: 'https://torrentz.eu/feed?q=tv' }
     include: [ my_series.yml ]
     exists_series:
-      - /media/TV Shows/
-      - /media/Downloading/
-    template:
-      - global
+      - /media/local/TV Shows/
+      - /media/local/Downloading/
     content_size:
       min: 100 #MB
       max: 400 #MB
@@ -61,26 +55,30 @@ templates:
     thetvdb_lookup: yes
     # Add accepted entries to Deluge and make sure they end up in the correct folder with a nice name
     set:
-      queuetotop: yes
       # Rename the "content file" to something nice, deluge specific
       content_filename: >
         {{ series_name|replace('/', '_')|replace(':', ' -') }} - {% if series_id_type == 'ep' and thetvdb_lookup_season_offset|default(False) %}{{ "S%0.2dE%0.2d"|format((series_season + thetvdb_lookup_season_offset),series_episode) }}{% else %}{{ series_id }}{% endif %}{% if ep_name|default(False) %} - {{ ep_name|replace('/', '_')|replace(':', ' -') }}{% endif %} - {{ quality }}
-      movedone: "/media/TV Shows/{{series_name}}/Season {{series_season}}/"
+      movedone: "/media/local/TV Shows/{{series_name}}/Season {{series_season}}/"
       label: tv
+      queuetotop: yes
 
 ##################################################################################
 #TASKS
 tasks:  
-  tv_series:
+  tv_series_auto:
     priority: 1
-    template: tv_shows
+    inputs:
+      - rss: { url: 'https://torrentz.eu/feed?q=tv' }
+    template:
+      - my_global
+      - tv_shows
 
   #Run this task to make flexget learn which episodes you already have in the file system
   seed_series_db:
     # The filesystem plugin will find all of your existing episodes
     filesystem:
       regexp: .*(avi|mkv|mpg|mp4)$
-      path: /media/TV Shows/
+      path: /media/local/TV Shows/
       recursive: yes
     include: [ my_series.yml ]
     # We use the manual plugin so that this task only runs when explicitly called
