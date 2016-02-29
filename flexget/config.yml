@@ -110,8 +110,32 @@ tasks:
       - tv_shows
 
   #Loads torrents manually downloaded and adds them to deluge
-  movies_local:
+  tv_local:
     priority: 2
+    template:
+      - my_global
+      - tv_shows
+    disable:
+      - retry_failed
+      - regexp
+      - content_size
+      - quality
+    filesystem:
+      path: '/home/olga/Downloads/tv_episodes_torrents'
+      recursive: yes
+      retrieve: files
+      regexp: '.*\.torrent$'
+    accept_all: yes
+    #FlexGet normally expects a task to produce entries on every run, and outputs a warning log entry if no entries were produced
+    no_entries_ok: yes
+    #Remove accepted torrent file
+    exec:
+      on_output:
+        for_accepted: rm "{{location}}"
+
+  #Loads torrents manually downloaded and adds them to deluge
+  movies_local:
+    priority: 3
     template:
       - my_global
       - movies
