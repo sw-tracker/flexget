@@ -37,7 +37,7 @@ sudo vim /etc/fstab
 
 Add the following at the end of the file:
 ```
-//192.168.1.XX/cloud_media  /media/cloud_media  cifs  username=<nas_username>,password=<nas_password>,iocharset=utf8,sec=ntlm  0  0
+//192.168.1.XX/cloud_media  /media/cloud_media  cifs  auto,username=<nas_username>,password=<nas_password>,iocharset=utf8,sec=ntlm  0  0
 ```
 
 and run this command to mount:
@@ -58,5 +58,5 @@ sudo chmod 600 ~/.credentials/.mycloudmedia
 
 Modify the line we added before to:
 ```
-//192.168.1.XX/cloud_media  /media/cloud_media  cifs credentials=/home/olga/.credentials/.mycloudmedia,iocharset=utf8,sec=ntlm  0  0
+//192.168.1.XX/cloud_media  /media/cloud_media  cifs auto,credentials=/home/olga/.credentials/.mycloudmedia,iocharset=utf8,sec=ntlm  0  0
 ```
