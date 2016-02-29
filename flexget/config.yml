@@ -93,6 +93,18 @@ tasks:
     priority: 1
     inputs:
       - rss: { url: 'https://torrentz.eu/feed?q=tv' }
+      #This is not necessary but sometimes I dont run pc and the above feed only returns the last 100 entries
+      #need to workout a better solution
+      - rss: { url: 'https://torrentz.eu/feed?q=The+Big+Bang+Theory+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=Fear+The+Walking+Dead+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=Homeland+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=Law+and+Order+SVU+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=Lucifer+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=Teen+Wolf+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=The+Originals+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=The+Vampire+Diaries+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=The+Walking+Dead+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=The+X+Files+tv' }
     template:
       - my_global
       - tv_shows
@@ -109,7 +121,7 @@ tasks:
       - content_size
       - quality
     filesystem:
-      path: '/home/olga/Download/movie_torrents'
+      path: '/home/olga/Downloads/movie_torrents'
       recursive: yes
       retrieve: files
       regexp: '.*\.torrent$'
