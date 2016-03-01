@@ -60,3 +60,28 @@ Modify the line we added before to:
 ```
 //192.168.1.XX/cloud_media  /media/cloud_media  cifs auto,credentials=/home/olga/.credentials/.mycloudmedia,_netdev,iocharset=utf8,sec=ntlm  0  0
 ```
+
+
+##Enable SSH
+
+First we have to enable SSH access on WD My Cloud: `My Cloud Dashboard -> Settings -> Network -> SSH`
+
+Then we can connect via a terminal window with the command:
+```
+ssh root@192.168.1.XX
+```
+The first time you will get something like:
+```
+The authenticity of host 'nas (xxx.xxx.xxx.xxx)' can't be established.RSA key fingerprint is 12:34:56:78:90:AB:CD:EF:00:11:22:33:44:55:66:77.
+Are you sure you want to continue connecting (yes/no)?
+```
+Enter `yes`.
+```
+Warning: Permanently added 'nas,xxx.xxx.xxx.xxx' (RSA) to the list of known hosts.
+```
+Type your root password, or if you haven't ever changed it, type `welc0me`. If you are logged on using the default password CHANGE IT NOW by typing:
+```
+passwd
+```
+
+Now SSH is enabled.
