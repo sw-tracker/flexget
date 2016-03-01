@@ -61,7 +61,6 @@ templates:
       # Rename the "content file" to something nice, use leading slash to force file to top level
       content_filename: >
         /{{ series_name|replace('/', '_')|replace(':', ' -') }} - {% if series_id_type == 'ep' and thetvdb_lookup_season_offset|default(False) %}{{ "S%0.2dE%0.2d"|format((series_season + thetvdb_lookup_season_offset),series_episode) }}{% else %}{{ series_id }}{% endif %}{% if ep_name|default(False) %} - {{ ep_name|replace('/', '_')|replace(':', ' -') }}{% endif %} - {{ quality }}
-      label: tv
       queuetotop: yes
 
   movies:
@@ -82,7 +81,6 @@ templates:
       # Rename the "content file" to something nice, use leading slash to force file to top level
       content_filename: >
         /{{ imdb_name|replace('/', '_')|replace(':', ' -')|replace(',', '') }} ({{ imdb_year }}) - {{ quality }}
-      label: mov
       queuetotop: no
 
 ##################################################################################
@@ -100,6 +98,7 @@ tasks:
       - rss: { url: 'https://torrentz.eu/feed?q=Homeland+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=Law+and+Order+SVU+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=Lucifer+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=Narcos+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=Teen+Wolf+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+Originals+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+Vampire+Diaries+tv' }
@@ -108,6 +107,8 @@ tasks:
     template:
       - my_global
       - tv_shows
+    set:
+      label: tv
 
   #Loads torrents manually downloaded and adds them to deluge
   tv_local:
@@ -128,6 +129,8 @@ tasks:
     accept_all: yes
     #FlexGet normally expects a task to produce entries on every run, and outputs a warning log entry if no entries were produced
     no_entries_ok: yes
+    set:
+      label: tv_m
     #Remove accepted torrent file
     exec:
       on_output:
@@ -150,6 +153,8 @@ tasks:
       retrieve: files
       regexp: '.*\.torrent$'
     accept_all: yes
+    set:
+      label: mov_m
     #FlexGet normally expects a task to produce entries on every run, and outputs a warning log entry if no entries were produced
     no_entries_ok: yes
     #Remove accepted torrent file
