@@ -70,5 +70,11 @@ sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/local/
 This is a list of what I still need to do:
 
 - Auto download movies on my IMDB.com watchlist.
-- Remove sleep and suspend buttons from Plex.
 - Get remote control working with PLEX (on ubuntu), TV and amplifier.
+- Get FlexGet Web UI.
+- Add SSH button commands from phone to:
+  - Turn laptop off.
+  - Poweroff/sleep(on/off) my cloud.
+  - Mount my cloud drive.
+  - Open flex command.
+  - Execute flexget.
