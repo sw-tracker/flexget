@@ -50,7 +50,7 @@ templates:
     quality: 720p+ sdtv+ xvid+
     content_size:
       min: 100 #MB
-      max: 400 #MB
+      max: 450 #MB
       strict: yes
     # Look up info on TheTVDB.com to fill in extra info
     thetvdb_lookup: yes
