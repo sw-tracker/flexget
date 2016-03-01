@@ -76,5 +76,5 @@ This is a list of what I still need to do:
   - Turn laptop off.
   - Poweroff/sleep(on/off) my cloud.
   - Mount my cloud drive.
-  - Open flex command.
+  - Open plex command.
   - Execute flexget.
