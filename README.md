@@ -41,8 +41,8 @@ Deluge linux user: `deluge`
 ##Manual addition
 Copy media to the correct location:
 ```
-- /media/Movies/<movie name> (<date)>/<filename>
-- /media/TV Shows/<series name>/Season <number>/<series name> - S<season number>E<episode number> - <quality>.<file type>
+- /media/local/Movies/<movie name> (<date)>/<filename>
+- /media/local/TV Shows/<series name>/Season <number>/<series name> - S<season number>E<episode number> - <quality>.<file type>
 ```
 
 Then correct permissions so deluge group has access:
@@ -60,9 +60,9 @@ sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/local/
 ##Media File Structure:
 
 ```
-- /media/Movies/<movie name> (<date)>/<filename>
-- /media/TV Shows/<series name>/Season <number>/<series name> - S<season number>E<episode number> - <quality>.<file type>
-- /media/Music/<ArtistName>/<TrackName>.<ext>
+- /media/cloud_media/Movies/<movie name> (<date)>/<filename>
+- /media/cloud_media/TV Shows/<series name>/Season <number>/<series name> - S<season number>E<episode number> - <quality>.<file type>
+- /media/cloud_media/Music/<ArtistName>/<TrackName>.<ext>
 ```
 
 ##TODO:
