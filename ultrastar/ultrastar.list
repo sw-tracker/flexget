@@ -1,0 +1,4 @@
+#UltraStar video playback is broken with the ffmpeg/libav packages provided by Ubuntu.
+#These fix the problem
+deb http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
+deb-src http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
