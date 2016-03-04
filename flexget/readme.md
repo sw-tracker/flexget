@@ -1,9 +1,21 @@
 #Install FlexGet on Ubuntu Trusty Tahr 14.04LTS to add RSS functionality to Deluge
 
-Disclaimer: 
-These are not my instructions, I copied them from the link below and made a backup of what I did. Thank you very much to the guys at havetheknowhow! http://www.havetheknowhow.com/Install-the-software/Install-FlexGet.html
+#FlexGet WebUI
+
+Add config to yml file (see my config.yml file). Then change the UI password:
+```
+sudo -H -u deluge flexget web passwd <password>
+```
+
+Then start the daemon:
+```
+sudo -H -u deluge flexget daemon start --daemonize
+```
 
 ##Install Python & pip
+
+Disclaimer: 
+These are not my instructions, I copied them from the link below and made a backup of what I did. Thank you very much to the guys at havetheknowhow! http://www.havetheknowhow.com/Install-the-software/Install-FlexGet.html
 
 First off we need to install Python and pip if they're not installed already. So type or paste the following two commands into a Putty session or directly into the command line of your Ubuntu installation:
 
@@ -29,9 +41,10 @@ flexget -V
 
 and it should return the version number. eg. 1.2.201. It will also tell you whether you're on the latest release or not (which we are given we've just installed it!). See NOTE below.
 
-When a new version of FlexGet is released and you want to upgrade to it, simply type the following:
+When a new version of FlexGet is released and you want to upgrade to it, simply type the following (stop the daemon first):
 
 ```
+sudo pip install --upgrade setuptools
 sudo pip install --upgrade flexget
 ```
 
