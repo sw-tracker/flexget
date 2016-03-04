@@ -12,7 +12,7 @@ Then start the daemon:
 sudo -H -u deluge flexget daemon start --daemonize
 ```
 
-Then open the web-ui by going to: http://localhost:3539/ui/
+Then open the web-ui by going to: https://localhost:3539/ui/
 
 - username: `flexget`
 - password: <password> you set above
