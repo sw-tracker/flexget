@@ -19,17 +19,15 @@ Press [ENTER] to continue or ctrl-c to cancel adding it
 
 Press ENTER to continue.
 
-However, if sound doesnt work with Videos you will need to copy these 2 lines into a new file in `/etc/apt/sources.list.d/ultrastar.list`:
+However, if sound doesnt work with videos you will need to install ffmpeg:
 ```
-deb http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
-deb-src http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
-```
-
-Then do an update:
-```
+sudo add-apt-repository ppa:mc3man/trusty-media
 sudo apt-get update
+sudo apt-get dist-upgrade
 sudo apt-get install ffmpeg
 ```
+
+instructions found at: http://www.faqforge.com/linux/how-to-install-ffmpeg-on-ubuntu-14-04/
 
 ##Config location
 
