@@ -17,6 +17,16 @@ It has been reported that video playback is broken with the ffmpeg/libav package
 Press [ENTER] to continue or ctrl-c to cancel adding it
 ```
 
+Press ENTER to continue.
+
+However, if sound doesnt work with Videos you will need to install the following:
+```
+deb http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
+deb-src http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
+```
+
+in progress, deb command not found...
+
 ##Config location
 
 On Ubuntu the config file is located:
