@@ -16,8 +16,9 @@ On Ubuntu the config file is located:
 ~/.ultrastardx/config.ini
 ```
 
-Add the folder location of your songs at the end of the file:
+Add the folder location of your songs in the `[Directories]` section:
 ```
 [Directories]
-SongDir1=/media/cloud_media/UltraStar/
+SongDir1=/media/local/UltraStar/
+SongDir2=/media/cloud_media/UltraStar/
 ```
