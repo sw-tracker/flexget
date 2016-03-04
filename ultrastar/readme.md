@@ -4,9 +4,9 @@
 
 Execute the following commands on a terminal:
 ```
-sudo add-apt-repository ppa:tobydox/ultrastardx 
-sudo apt-get update 
-sudo apt-get install ultrastar-deluxe 
+sudo add-apt-repository ppa:tobydox/ultrastardx
+sudo apt-get update
+sudo apt-get install ultrastar-deluxe
 ```
 
 You will get this message:
@@ -19,13 +19,17 @@ Press [ENTER] to continue or ctrl-c to cancel adding it
 
 Press ENTER to continue.
 
-However, if sound doesnt work with Videos you will need to install the following:
+However, if sound doesnt work with Videos you will need to copy these 2 lines into a new file in `/etc/apt/sources.list.d/ultrastar.list`:
 ```
 deb http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
 deb-src http://ppa.launchpad.net/tobydox/ultrastardx/ubuntu trusty main
 ```
 
-in progress, deb command not found...
+Then do an update:
+```
+sudo apt-get update
+sudo apt-get install ffmpeg
+```
 
 ##Config location
 
