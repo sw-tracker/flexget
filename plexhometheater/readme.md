@@ -69,7 +69,11 @@ You will get a result like this (depending on your apperance layout)/ I disabled
 HomeMenu.xml:			<onclick>Plex.Powerdown</onclick>
 ```
 
-Now follow the steps for the default Plex skin but with `HomeMenu.xml` instead of `LeftSideMenu.xml`
+Now follow the steps for the default Plex skin but with `HomeMenu.xml` instead of `LeftSideMenu.xml`:
+```
+sudo cp ~/.plexht/addons/skin.plex_black_editionHT/720p/HomeMenu.xml{,.bak}
+sudo sed -i 's|Plex.Powerdown|System.Exec("dbus-send,--system,--print-reply,--dest='org.freedesktop.login1',/org/freedesktop/login1,org.freedesktop.login1.Manager.PowerOff,boolean:true")|g' ~/.plexht/addons/skin.plex_black_editionHT/720p/HomeMenu.xml
+```
 
 #Install Skins
 
