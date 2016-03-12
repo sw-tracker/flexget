@@ -58,7 +58,18 @@ instead of
 /opt/plexhometheater/share/XBMC/addons/skin.plex/
 ```
 
-- Finding the right file is in progress...
+- Finding the right file in which the powerdown command is located:
+```
+cd ~/.plexht/addons/skin.plex_black_editionHT/720p/
+grep  -r -e "Powerdown"
+```
+
+You will get a result like this (depending on your apperance layout)/ I disabled the sub-menu so my SHUTDOWN button is in the home menu.
+```
+HomeMenu.xml:			<onclick>Plex.Powerdown</onclick>
+```
+
+Now follow the steps for the default Plex skin but with `HomeMenu.xml` instead of `LeftSideMenu.xml`
 
 #Install Skins
 
