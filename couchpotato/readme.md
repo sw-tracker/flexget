@@ -1,5 +1,9 @@
 #CouchPotato
 
+##CouchPotato Server
+
+http://localhost:5050
+
 ##Install on Ubuntu 14.04
 
 From: http://dominicm.com/install-couchpotato-ubuntu-14-04/
