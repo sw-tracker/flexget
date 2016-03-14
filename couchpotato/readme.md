@@ -52,12 +52,13 @@ author "DominicM @ dominicm.com"
 setuid couchpotato
 # What group to run as
 setgid deluge
-# When to start the service
+# When to start the service [Graphical multi-user plus networking (DEFAULT)]
 start on runlevel [2345]
 # When to stop the service
 stop on runlevel [016]
 # Automatically restart process if crashed
 respawn
+respawn limit 5 30
 # Start the process
 script
 exec python /opt/CouchPotatoServer/CouchPotato.py
