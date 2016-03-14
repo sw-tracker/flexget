@@ -106,6 +106,7 @@ tasks:
       - rss: { url: 'https://torrentz.eu/feed?q=Homeland+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=Law+and+Order+SVU+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=Lucifer+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=Making+a+Murderer+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=Narcos+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=Teen+Wolf+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+Originals+tv' }
@@ -129,6 +130,9 @@ tasks:
       - regexp
       - content_size
       - quality
+      - seen
+      - series
+      - exists_series
     filesystem:
       path: '/home/olga/Downloads/tv_episodes_torrents'
       recursive: yes
