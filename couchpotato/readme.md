@@ -46,8 +46,8 @@ sudo vim /etc/init/couchpotato.conf
 
 Copy the script and save the configuration file.
 ```
-description "CouchPotato upstart script"
-author "DominicM @ dominicm.com"
+description "CouchPotato Daemon"
+author "CouchPotato Team"
 # What user to run as
 setuid couchpotato
 # What group to run as
