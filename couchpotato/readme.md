@@ -36,3 +36,35 @@ Run CouchPotato manually as `couchpotato` user so it creates the required folder
 ```
 sudo -H -u couchpotato python /opt/CouchPotatoServer/CouchPotato.py
 ```
+
+##Run CouchPotato at StartUp
+
+Open or create a new upstart configuration file for CouchPotato.
+```
+sudo vim /etc/init/couchpotato.conf
+```
+
+Copy the script and save the configuration file.
+```
+description "CouchPotato upstart script"
+author "DominicM @ dominicm.com"
+# What user to run as
+setuid couchpotato
+# What group to run as
+setgid deluge
+# When to start the service
+start on runlevel [2345]
+# When to stop the service
+stop on runlevel [016]
+# Automatically restart process if crashed
+respawn
+# Start the process
+script
+exec python /opt/CouchPotatoServer/CouchPotato.py
+end script
+```
+
+Run CouchPotato with upstart.
+```
+start couchpotato
+```
