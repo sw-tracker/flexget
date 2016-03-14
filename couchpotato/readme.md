@@ -75,3 +75,10 @@ Run CouchPotato with upstart.
 ```
 start couchpotato
 ```
+
+##Deluge
+
+If using deluge to download the label must be manually created via the UI. In my case I would like to use the label `potato`:
+```
+Deluge Web-UI -> Filters (left tab) -> Label -> Right Click -> Add Label
+```
