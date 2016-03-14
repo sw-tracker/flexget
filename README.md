@@ -30,6 +30,10 @@ I use this software to auto-download TV series (using deluge). FlexGet finds the
 
 I use this to download subtitles as soon as an episode or movie is downloaded. This is a script that gets executed from deluge when a torrent is completed.
 
+###CouchPotato
+
+I use this to autodownload movies. It bypasses flexget, searches a bunch of torrent sites for the right torrent according to size/quality specified and downloads it with deluge.
+
 ##Users and Groups
 
 All users must belong to the group: `deluge`
@@ -37,6 +41,8 @@ All users must belong to the group: `deluge`
 Plex linux user: `plex`
 
 Deluge linux user: `deluge`
+
+CouchPotato user: `couchpotato`
 
 ##Manual addition
 Copy media to the correct location:
