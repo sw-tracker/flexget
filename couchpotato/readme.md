@@ -13,5 +13,5 @@ cd /opt
 sudo git clone https://github.com/RuudBurger/CouchPotatoServer.git
 sudo chown -R couchpotato:deluge /opt/CouchPotatoServer
 sudo chmod -R 755 /opt/CouchPotatoServer
-python /opt/CouchPotatoServer/CouchPotato.py
+sudo -H -u couchpotato python /opt/CouchPotatoServer/CouchPotato.py
 ```
