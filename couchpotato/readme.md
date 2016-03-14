@@ -37,6 +37,12 @@ Run CouchPotato manually as `couchpotato` user so it creates the required folder
 sudo -H -u couchpotato python /opt/CouchPotatoServer/CouchPotato.py
 ```
 
+There might be errors in the log regarding opensssh, to fix it install this:
+```
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+sudo pip install cryptography
+```
+
 ##Run CouchPotato at StartUp
 
 Open or create a new upstart configuration file for CouchPotato.
