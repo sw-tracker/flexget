@@ -11,6 +11,7 @@ From: http://dominicm.com/install-couchpotato-ubuntu-14-04/
 Create a system user account that CouchPotato will run under.
 ```
 sudo useradd -r -s /bin/false -m couchpotato
+sudo usermod -c "CouchPotato" couchpotato
 ```
 
 Add the system user to the primary group, in my case `deluge`.
