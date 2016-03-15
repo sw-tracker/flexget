@@ -14,11 +14,11 @@ With this I can:
 
 3. This uses an ubuntu user called plex and you need to create an account on the plex website.
 
+http://127.0.0.1:32400/web/index.html#
+
 ###PLEX Home Theater Client
 
 With this I can display a cooler UI on my main TV.
-
-http://127.0.0.1:32400/web/index.html#
 
 ###Deluge
 
