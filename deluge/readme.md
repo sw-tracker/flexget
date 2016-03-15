@@ -178,3 +178,29 @@ sudo stop deluge-web
 
 To start it again use start instead of stop in the above command.
 - See more at: http://www.havetheknowhow.com/Install-the-software/Install-Deluge-Headless.html#sthash.cGXrjyqs.dpuf
+
+##Auto Connect WebUI to Daemon
+
+Stop deluged daemon.
+
+In this file there must be a line with the deluge username and password for the WebUI to connect to.
+```
+sudo -u deluge vim /var/lib/deluge/.config/deluge/auth
+```
+
+This line may already be there, if it isnt add it at the end of the file `<username>:<password>:10`:
+```
+deluge:deluge:10
+```
+
+Now lets set the default daemon to the WebUI. In the file:
+```
+sudo vim /var/lib/deluge/.config/deluge/web.conf
+```
+
+Add:
+```
+"default_daemon": "127.0.0.1:58846",
+```
+
+Now restart the daemon.
