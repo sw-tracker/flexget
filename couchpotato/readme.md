@@ -59,6 +59,10 @@ author "CouchPotato Team"
 setuid couchpotato
 # What group to run as
 setgid deluge
+# Sets default permissions for files created by this process
+# 002 grants full access to the user and the group and only read access to other accounts
+# should be an octal value for the mask (leading 0)
+umask 0002
 # When to start the service [Graphical multi-user plus networking (DEFAULT)]
 start on runlevel [2345]
 # When to stop the service
