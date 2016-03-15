@@ -88,9 +88,6 @@ sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/local/
 This is a list of what I still need to do:
 
 - Set correct umask to deluged upstart.
-- Add user gecos comment to couchpotato.
-- Auto connect deluge-webui to daemon on start.
-- Remove chmod from subtitles script.
 - CouchPotato upstart: add umask.
 - Get remote control working with PLEX (on ubuntu), TV and amplifier.
 - Add SSH button commands from phone to:
