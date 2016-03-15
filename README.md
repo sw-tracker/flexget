@@ -38,9 +38,13 @@ I use this to download subtitles as soon as an episode or movie is downloaded. T
 
 ###CouchPotato
 
-I use this to autodownload movies. It bypasses flexget, searches a bunch of torrent sites for the right torrent according to size/quality specified and downloads it with deluge.
+I use this to autodownload movies. It bypasses flexget, searches a bunch of torrent sites for the right torrent according to size/quality specified and downloads it with deluge. It runs as a daemon on startup.
 
 http://127.0.0.1:5050
+
+###Headphones
+
+I use this to download music. I havent installed it yet.
 
 ##Users and Groups
 
