@@ -87,7 +87,7 @@ respawn limit 5 30
 
 env uid=deluge
 env gid=deluge
-env umask=000
+env umask=002
 
 exec start-stop-daemon -S -c $uid:$gid -k $umask -x /usr/bin/deluged -- -d
 ```
@@ -95,6 +95,12 @@ exec start-stop-daemon -S -c $uid:$gid -k $umask -x /usr/bin/deluged -- -d
 Toggle back to the Putty Session and press the [Insert] key once and add a couple of blank lines by pressing the [Enter] key. Next right click and the lines we've just copied above will be pasted into the file.
 
 Now press the [Esc] key once and type :wq to save and quit out of the script. If you make a mistake editing the file then issue :q! instead of :wq to abort your changes.
+
+You may wish to modify the above `umask` as it applies to any files downloaded by deluged:
+- 007 grants full access to the user and members of the group deluged is running as (in this case deluge) and prevents access from all other accounts.
+- 002 grants full access to the user and the group deluged is running as and only read access to other accounts.
+- 022 grants full access to the user deluged is running as and only read access to other accounts.
+- 000 grants full access to all accounts. 
 
 ##Create the Web start-up script
 
@@ -133,6 +139,8 @@ exec start-stop-daemon -S -c $uid:$gid -k $umask -x /usr/bin/deluge-web
 Toggle back to the Putty Session and press the [Insert] key once and add a couple of blank lines by pressing the [Enter] key. Next right click and the lines we've just copied above will be pasted into the file.
 
 Now press the [Esc] key once and type :wq to save and quit out of the script. If you make a mistake editing the file then issue :q! instead of :wq to abort your changes.
+
+umask 027 grants full access to uid, read access to gid and prevents access from all other accounts. This should only affect the permissions of plugins installed through the Web UI and, if enabled, logs. Group permissions are restricted to read-only to prevent compromised member accounts injecting malicious code into plugins or modifying the logs.
 
 Cross your fingers and restart the server by typing the following command:
 
