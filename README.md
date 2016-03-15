@@ -18,14 +18,19 @@ With this I can:
 
 With this I can display a cooler UI on my main TV.
 
+http://127.0.0.1:32400/web/index.html#
+
 ###Deluge
 
 This is my choice of torrent download software. I run it as a daemon on boot and I use a web user interface to connect to the daemon and manage my downloads.
-http://localhost:8112/
+
+http://127.0.0.1:8112/
 
 ###FlexGet
 
 I use this software to auto-download TV series (using deluge). FlexGet finds the torrents I want and adds them to deluge for download. This means that if a new episode comes out, it will get downloaded and added to my media centre. It runs as a daemon on boot and can be configured to check the torrents site with the 'schedule' configuration.
+
+https://127.0.0.1:3539/ui/
 
 ###Subliminal
 
@@ -34,6 +39,8 @@ I use this to download subtitles as soon as an episode or movie is downloaded. T
 ###CouchPotato
 
 I use this to autodownload movies. It bypasses flexget, searches a bunch of torrent sites for the right torrent according to size/quality specified and downloads it with deluge.
+
+http://127.0.0.1:5050
 
 ##Users and Groups
 
