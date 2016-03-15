@@ -21,6 +21,7 @@ With this I can display a cooler UI on my main TV.
 ###Deluge
 
 This is my choice of torrent download software. I run it as a daemon on boot and I use a web user interface to connect to the daemon and manage my downloads.
+http://localhost:8112/
 
 ###FlexGet
 
