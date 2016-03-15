@@ -198,7 +198,7 @@ Now lets set the default daemon to the WebUI. In the file:
 sudo vim /var/lib/deluge/.config/deluge/web.conf
 ```
 
-Add:
+Edit web.conf and find the line `"default_daemon": "",`. Add your host address between the quotation marks at the end:
 ```
 "default_daemon": "127.0.0.1:58846",
 ```
