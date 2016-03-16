@@ -36,6 +36,8 @@ https://127.0.0.1:3539/ui/
 
 I use this to download subtitles as soon as an episode or movie is downloaded. This is a script that gets executed from deluge when a torrent is completed.
 
+Sometimes subtitles are out of sync, so this tools helps me fix them: http://gnome-subtitles.sourceforge.net/ubuntu
+
 ###CouchPotato
 
 I use this to autodownload movies. It bypasses flexget, searches a bunch of torrent sites for the right torrent according to size/quality specified and downloads it with deluge. It runs as a daemon on startup.
