@@ -55,7 +55,7 @@ templates:
       - /media/cloud_media/TV Shows/
       - /media/local/TV Shows/
       - /media/local/Downloading/
-    quality: 720p+ sdtv+ xvid+
+    quality: 720p+ tvrip+ divx+
     content_size:
       min: 100 #MB
       max: 450 #MB
