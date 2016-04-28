@@ -113,6 +113,7 @@ tasks:
       - rss: { url: 'https://torrentz.eu/feed?q=The+Vampire+Diaries+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+Walking+Dead+tv' }
       - rss: { url: 'https://torrentz.eu/feed?q=The+X+Files+tv' }
+      - rss: { url: 'https://torrentz.eu/feed?q=The+Flash+2014+tv' }
     template:
       - my_global
       - tv_shows
