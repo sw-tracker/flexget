@@ -2,6 +2,15 @@
 
 ##Overview
 
+###Ubuntu version
+
+Most instructions here were written for Ubuntu 14.04, this uses upstart. From 15.04+, upstart was changed to systemd. I have not switched to systemd and since upstart is still available, you can switch to it permanently with this command:
+
+```
+sudo apt-get install upstart-sysv
+```
+see https://wiki.ubuntu.com/SystemdForUpstartUsers
+
 ###PLEX Server
 
 With this I can:
