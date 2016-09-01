@@ -4,6 +4,11 @@ http://127.0.0.1:32400/web/index.html#
 #Start plex
 ~/bin/plexhometheater.sh
 
+Server:
+```
+systemctl start plexmediaserver.service
+```
+
 #Add media folder
 
 Make sure you add the media folder to the getsubs.sh script chmod command, so that plex can see newly added files from deluge.
