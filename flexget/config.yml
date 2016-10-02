@@ -98,22 +98,22 @@ tasks:
   tv_series_auto:
     priority: 1
     inputs:
-      - rss: { url: 'https://torrentz.eu/feed?q=tv' }
-      #This is not necessary but sometimes I dont run pc and the above feed only returns the last 100 entries
+      #This is necessary, sometimes I dont run pc and the above feed only returns the last 100 entries
       #need to workout a better solution
-      - rss: { url: 'https://torrentz.eu/feed?q=The+Big+Bang+Theory+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=Fear+The+Walking+Dead+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=Homeland+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=Law+and+Order+SVU+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=Lucifer+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=Making+a+Murderer+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=Narcos+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=Teen+Wolf+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=The+Originals+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=The+Vampire+Diaries+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=The+Walking+Dead+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=The+X+Files+tv' }
-      - rss: { url: 'https://torrentz.eu/feed?q=The+Flash+2014+tv' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Big+Bang+Theory/' }
+      - rss: { url: 'https://torrentproject.se/rss/Fear+The+Walking+Dead/' }
+      - rss: { url: 'https://torrentproject.se/rss/Homeland/' }
+      - rss: { url: 'https://torrentproject.se/rss/Law+and+Order+SVU/' }
+      - rss: { url: 'https://torrentproject.se/rss/Lucifer/' }
+      - rss: { url: 'https://torrentproject.se/rss/Making+a+Murderer/' }
+      - rss: { url: 'https://torrentproject.se/rss/Narcos/' }
+      - rss: { url: 'https://torrentproject.se/rss/Orange+is+the+new+black/' }
+      - rss: { url: 'https://torrentproject.se/rss/Teen+Wolf/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Originals/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Vampire+Diaries/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Walking+Dead/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+X+Files/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Flash+2014/' }
     template:
       - my_global
       - tv_shows
