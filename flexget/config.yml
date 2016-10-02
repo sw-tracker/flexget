@@ -101,11 +101,14 @@ tasks:
       #This is necessary, sometimes I dont run pc and the above feed only returns the last 100 entries
       #need to workout a better solution
       - rss: { url: 'https://torrentproject.se/rss/The+Big+Bang+Theory/' }
+      - rss: { url: 'https://torrentproject.se/rss/Cleverman+2016/' }
+      - rss: { url: 'https://torrentproject.se/rss/Designated+Survivor/' }
       - rss: { url: 'https://torrentproject.se/rss/Fear+The+Walking+Dead/' }
       - rss: { url: 'https://torrentproject.se/rss/Homeland/' }
       - rss: { url: 'https://torrentproject.se/rss/Law+and+Order+SVU/' }
       - rss: { url: 'https://torrentproject.se/rss/Lucifer/' }
       - rss: { url: 'https://torrentproject.se/rss/Making+a+Murderer/' }
+      - rss: { url: 'https://torrentproject.se/rss/Modern+Family/' }
       - rss: { url: 'https://torrentproject.se/rss/Narcos/' }
       - rss: { url: 'https://torrentproject.se/rss/Orange+is+the+new+black/' }
       - rss: { url: 'https://torrentproject.se/rss/Teen+Wolf/' }
