@@ -1,4 +1,6 @@
-# How to setup a VPN
+# VPN
+
+## How to setup a VPN
 
 Install OpenVPN:
 
@@ -117,3 +119,9 @@ Chrome: Install ScriptSafe extension
 
 Firefox: type `about:config` on browser address box. Set `media.peerconnection.enabled` setting to false.
 
+# Start/Stop
+
+```
+sudo /etc/init.d/openvpn stop
+sudo /etc/init.d/openvpn start
+```
