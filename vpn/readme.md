@@ -52,6 +52,48 @@ Wed May 4 08:42:40 2016 /sbin/ip addr add dev tun0 local 10.177.1.6 peer 10.177.
 Wed May 4 08:42:40 2016 Initialization Sequence Completed
 ````
 
+# AutoStart on Boot
+
+OpenVpn comes with an autostart, it just needs to be enabled. By default, the autostart will load a daemon for each `conf` file found in `/etc/openvpn`. In my case, I will only have one called `server.conf`.
+
+Edit the file below:
+````
+sudo vim /etc/default/openvpn
+````
+
+Uncomment the line below (remove the #):
+````
+AUTOSTART="all"
+````
+
+Then tell the daemon to load the new settings:
+````
+sudo systemctl daemon-reload
+````
+
+Then create `server.conf` from one of the `ovpn` files provided by ther VPN provider. Let's say you choose `Switzerland.ovpn`:
+````
+cd /etc/openvpn
+sudo cp Switzerland.ovpn server.conf
+````
+
+Then let's add the username/password to `server.conf` so the connection happens automatically.
+````
+sudo vim /etc/openvpn/server.conf
+````
+
+The file should already have a setting like `auth-user-pass`, please replace it with:
+````
+auth-user-pass login.txt
+````
+
+You can test that the correct credentials are being loaded like this (it should connect without asking for username/password):
+````
+sudo openvpn --config /etc/openvpn/server.conf
+````
+
+Now reboot and go to the verify section.
+
 # Verify VPN
 
 Open a new terminal and type:
