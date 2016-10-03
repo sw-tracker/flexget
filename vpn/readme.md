@@ -125,3 +125,12 @@ Firefox: type `about:config` on browser address box. Set `media.peerconnection.e
 sudo /etc/init.d/openvpn stop
 sudo /etc/init.d/openvpn start
 ```
+
+If we need to connect to a different exit point (country), edit the `server.conf` file:
+```
+sudo vim /etc/openvpn/server.conf
+```
+
+And change `remote italy.privateinternetaccess.com 1198` to the desired country name.
+Check available country names in `/etc/openvpn/`.
+
