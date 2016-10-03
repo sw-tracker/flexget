@@ -108,10 +108,12 @@ Wed May 4 08:42:37 2016 UDPv4 link remote: [AF_INET]185.3.135.34:1194
 
 # Tests for IP Leakage
 
-http://whatismyipaddress.com/
+https://www.iplocation.net/
 https://www.browserleaks.com/webrtc
 
 To fix webrtc:
+
 Chrome: Install ScriptSafe extension
+
 Firefox: type `about:config` on browser address box. Set `media.peerconnection.enabled` setting to false.
 
