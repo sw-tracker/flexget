@@ -186,6 +186,23 @@ FlexGet keeps a record of what files it has and has not downloaded in an SQL dat
 sudo -u deluge rm /var/lib/deluge/.flexget/db-config.sqlite
 ```
 
+## Dealing with CloudflareScraper
+
+Some websites have checks to ensure you are accessing from a browser. To bypass these checks we need to install the following:
+
+```
+sudo pip uninstall cfscrape
+sudo pip install https://github.com/Anorov/cloudflare-scrape/zipball/master
+```
+
+Make sure you are on flexget version 2.5.6 or greater. Then add the following to your config before your rss inputs:
+
+```
+headers:
+  User-Agent: "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefox/28.0"
+cfscraper: yes
+```
+
 ##Teach FlexGet which Episodes you Already Have
 
 Add a task called `seed_series_db` (see config.yml for details), and then call it manually (this task does not run automatically).
