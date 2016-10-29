@@ -188,6 +188,8 @@ sudo -u deluge rm /var/lib/deluge/.flexget/db-config.sqlite
 
 ## Dealing with CloudflareScraper
 
+http://flexget.com/Plugins/cfscraper
+
 Some websites have checks to ensure you are accessing from a browser. To bypass these checks we need to install the following:
 
 ```
