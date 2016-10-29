@@ -3,8 +3,8 @@
 web_server:
   bind: 0.0.0.0
   port: 3539
-api: yes
-webui: yes
+#api: yes
+#webui: yes
 
 ##################################################################################
 #TEMPLATES
@@ -97,26 +97,30 @@ tasks:
   #Auto downloads new episodes of my TV series
   tv_series_auto:
     priority: 1
+    headers:
+      User-Agent: "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:28.0) Gecko/20100101 Firefox/28.0"
+    cfscraper: yes
     inputs:
       #This is necessary, sometimes I dont run pc and the above feed only returns the last 100 entries
       #need to workout a better solution
-      - rss: { url: 'http://torrentproject.se/rss/The+Big+Bang+Theory/' }
-      - rss: { url: 'http://torrentproject.se/rss/Cleverman+2016/' }
-      - rss: { url: 'http://torrentproject.se/rss/Designated+Survivor/' }
-      - rss: { url: 'http://torrentproject.se/rss/Fear+The+Walking+Dead/' }
-      - rss: { url: 'http://torrentproject.se/rss/Homeland/' }
-      - rss: { url: 'http://torrentproject.se/rss/Law+and+Order+SVU/' }
-      - rss: { url: 'http://torrentproject.se/rss/Lucifer/' }
-      - rss: { url: 'http://torrentproject.se/rss/Making+a+Murderer/' }
-      - rss: { url: 'http://torrentproject.se/rss/Modern+Family/' }
-      - rss: { url: 'http://torrentproject.se/rss/Narcos/' }
-      - rss: { url: 'http://torrentproject.se/rss/Orange+is+the+new+black/' }
-      - rss: { url: 'http://torrentproject.se/rss/Teen+Wolf/' }
-      - rss: { url: 'http://torrentproject.se/rss/The+Originals/' }
-      - rss: { url: 'http://torrentproject.se/rss/The+Vampire+Diaries/' }
-      - rss: { url: 'http://torrentproject.se/rss/The+Walking+Dead/' }
-      - rss: { url: 'http://torrentproject.se/rss/The+X+Files/' }
-      - rss: { url: 'http://torrentproject.se/rss/The+Flash+2014/' }
+      - rss: { url: 'https://torrentproject.se/?t=7days+type%3Atv&w&out=rss' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Big+Bang+Theory/' }
+      - rss: { url: 'https://torrentproject.se/rss/Cleverman+2016/' }
+      - rss: { url: 'https://torrentproject.se/rss/Designated+Survivor/' }
+      - rss: { url: 'https://torrentproject.se/rss/Fear+The+Walking+Dead/' }
+      - rss: { url: 'https://torrentproject.se/rss/Homeland/' }
+      - rss: { url: 'https://torrentproject.se/rss/Law+and+Order+SVU/' }
+      - rss: { url: 'https://torrentproject.se/rss/Lucifer/' }
+      - rss: { url: 'https://torrentproject.se/rss/Making+a+Murderer/' }
+      - rss: { url: 'https://torrentproject.se/rss/Modern+Family/' }
+      - rss: { url: 'https://torrentproject.se/rss/Narcos/' }
+      - rss: { url: 'https://torrentproject.se/rss/Orange+is+the+new+black/' }
+      - rss: { url: 'https://torrentproject.se/rss/Teen+Wolf/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Originals/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Vampire+Diaries/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Walking+Dead/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+X+Files/' }
+      - rss: { url: 'https://torrentproject.se/rss/The+Flash+2014/' }
     template:
       - my_global
       - tv_shows
