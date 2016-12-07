@@ -86,6 +86,13 @@ Then get subtitles if necessary:
 sudo -H -u deluge /var/lib/deluge/.subliminal/getsubs.sh -1 . /media/local/
 ```
 
+Quick check of video file:
+```
+sudo find -name "*.mp4" -or -name "*.mkv" -exec sh -c 'echo "{}";ffprobe -show_format "{}" | grep -qi duration; case "$?" in "0") echo "seems_ok" + "{}";; "1") echo "error invalid" + "{}";; *) echo "error unknown: $?" + "{}";; esac | grep error >> errors.log' \;
+```
+
+It does a check using `ffprobe` to get the duration of the video. If the duration cant be calculated we assume the video is incorrect. This is a quick check only.
+
 ##Media File Structure:
 
 ```
