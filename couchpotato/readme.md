@@ -88,3 +88,13 @@ If using deluge to download the label must be manually created via the UI. In my
 ```
 Deluge Web-UI -> Filters (left tab) -> Label -> Right Click -> Add Label
 ```
+
+##Verify Videos
+
+Sometimes downloaded videos are invalid. I wrote a quick script to check these files:
+
+```
+sudo vim ~/.flexget/verify_videos.sh
+sudo chmod u+x ~/.flexget/verify_videos.sh
+~/.flexget/verify_videos.sh
+```
