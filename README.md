@@ -1,8 +1,8 @@
-#My Media Centre Setup
+# My Media Centre Setup
 
-##Overview
+## Overview
 
-###Ubuntu version
+### Ubuntu version
 
 Most instructions here were written for Ubuntu 14.04, this uses upstart. From 15.04+, upstart was changed to systemd. I have not switched to systemd and since upstart is still available, you can switch to it permanently with this command:
 
@@ -11,7 +11,7 @@ sudo apt-get install upstart-sysv
 ```
 see https://wiki.ubuntu.com/SystemdForUpstartUsers
 
-###PLEX Server
+### PLEX Server
 
 With this I can:
 
@@ -25,39 +25,39 @@ With this I can:
 
 http://127.0.0.1:32400/web/index.html#
 
-###PLEX Home Theater Client
+### PLEX Home Theater Client
 
 With this I can display a cooler UI on my main TV.
 
-###Deluge
+### Deluge
 
 This is my choice of torrent download software. I run it as a daemon on boot and I use a web user interface to connect to the daemon and manage my downloads.
 
 http://127.0.0.1:8112/
 
-###FlexGet
+### FlexGet
 
 I use this software to auto-download TV series (using deluge). FlexGet finds the torrents I want and adds them to deluge for download. This means that if a new episode comes out, it will get downloaded and added to my media centre. It runs as a daemon on boot and can be configured to check the torrents site with the 'schedule' configuration.
 
 https://127.0.0.1:3539/ui/
 
-###Subliminal
+### Subliminal
 
 I use this to download subtitles as soon as an episode or movie is downloaded. This is a script that gets executed from deluge when a torrent is completed.
 
 Sometimes subtitles are out of sync, so this tools helps me fix them with: http://gnome-subtitles.sourceforge.net/ubuntu (on Ubuntu) or http://www.nikse.dk/subtitleedit (on Windows).
 
-###CouchPotato
+### CouchPotato
 
 I use this to autodownload movies. It bypasses flexget, searches a bunch of torrent sites for the right torrent according to size/quality specified and downloads it with deluge. It runs as a daemon on startup.
 
 http://127.0.0.1:5050
 
-###Headphones
+### Headphones
 
 I use this to download music. I havent installed it yet.
 
-##Users and Groups
+## Users and Groups
 
 All users must belong to the group: `deluge`
 
@@ -99,7 +99,7 @@ Quick check of video file (check couchpotato for more details). Log is found in 
 - /media/cloud_media/Music/<ArtistName>/<TrackName>.<ext>
 ```
 
-##TODO:
+## TODO:
 
 This is a list of what I still need to do:
 
